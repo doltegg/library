@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>整合行銷部圖書館</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <style>
+    *,
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Noto Sans TC', 微軟正黑體, 'Raleway', sans-serif;
+    }
+
+    h1 {
+      font-family: 'Noto Sans TC';
+      font-size: 120px;
+      font-weight: 900;
+    }
+
+    h2 {
+      font-size: 60px;
+      font-weight: 900;
+    }
+
+    h3 {
+      font-size: 45px;
+      font-weight: 700;
+    }
+
+    h4 {
+      font-size: 30px;
+      font-weight: 500;
+    }
+
+    .header {
+      height: 100vh;
+      background-image: url(https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1153&q=80);
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed;
+    }
+
+    #dice {
+      /* background-image: url(https://images.unsplash.com/photo-1586941963134-6486b671b809?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80); */
+      /* background-image: url(https://images.unsplash.com/photo-1585066437551-230239e3131e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80); */
+      /* background-image: url(https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=841&q=80); */
+      background-image: url(https://images.unsplash.com/photo-1584880368838-f60e501e7493?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed;
+    }
+
+    .custom-card {
+      background-color: transparent;
+      /* rgba(0,0,0,.8);*/
+      border: none;
+      position: relative;
+    }
+
+    .card-bg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      /* background-color: red; */
+      border-radius: 10px;
+      /* z-index: -1; */
+      overflow: hidden;
+      box-shadow: 5px 5px 10px gray;
+    }
+
+    .card-bg:after {
+      content: "";
+      position: absolute;
+      left: -20px;
+      top: -20px;
+      right: -20px;
+      bottom: -20px;
+      filter: blur(8px);
+      border-radius: 10px;
+      background-image: url(https://images.unsplash.com/photo-1584880368838-f60e501e7493?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed;
+    }
+
+    .card-body {
+      /* width: 600px; */
+      z-index: 1;
+    }
+
+    .border-radius {
+      border-radius: 50px;
+    }
+
+    /* 以下為抽籤 CSS */
+    #dice p .p-mar {
+      margin-top: 15px;
+    }
+
+    #dice .p-mar10 {
+      margin-top: 13px;
+    }
+
+    #dice .mytext {
+      color: #bbb;
+    }
+
+    .bubox .btn1,
+    .bubox .btn2,
+    .bubox .btn3 {
+      cursor: pointer;
+      padding: 4px 1.8rem; /*40px;*/
+      margin: 0 .2rem;
+      border-radius: 6px;
+      border: none;
+      color: white;
+      font-size: 1.25rem;
+      box-shadow: 0 5px 10px 0 rgba(255, 255, 255, .2), 0 3px 10px 0 rgba(255, 255, 255, .25);
+    }
+
+    .bubox .btn1:hover,
+    .bubox .btn2:hover,
+    .bubox .btn3:hover {
+      box-shadow: 0 12px 16px 0 rgba(99, 99, 99, .8), 0 17px 50px 0 rgba(99, 99, 99, .75);
+    }
+
+    .bubox .btn1 {
+      background: #28a745;
+      /* #4CAF50;*/
+    }
+
+    .bubox .btn2 {
+      background: #dc3545;
+      /*#880000;*/
+    }
+
+    .bubox .btn3 {
+      background: #6c757d;
+      /*#2E64FE;*/
+    }
+
+    .name_list {
+      overflow: hidden;
+      padding: 6px;
+      clear: both;
+      border: 1px solid #40AA53;
+      border-radius: 50px;
+      background: rgb(10, 10, 10, .2);
+      color: #6c757d;
+      line-height: 1.5;
+      height: 40px;
+    }
+
+    /* {overflow: hidden; padding:10px; clear:both; border: 10px solid #40AA53; color:gray;} */
+    .name_list span,
+    .luck_select {
+      display: inline-block;
+      padding: 2px 3px;
+      white-space: nowrap;
+      background: #58FA82;
+      color: #373737;
+      /* float: left; */
+      height: 30px;
+      line-height: 1.5;
+      margin: 0 3px;
+      cursor: pointer;
+    }
+
+    .name_list span:hover {
+      background: #088A29;
+    }
+
+    .name_list span.select,
+    .luck_select {
+      background: #f08;
+      /*darkorange;*/
+      font-family: 'Noto Sans TC';
+      font-weight: 700;
+      color: #fff;
+    }
+    
+    /*表格*/
+    table tr, table th, table td{
+      font-family: 'Raleway', 'Noto Sans TC';
+      font-weight: 100;
+    }
+    table.bottomBorder { 
+        border-collapse: collapse; 
+        border-top: 2px solid;
+        border-bottom: 2px solid;
+    }
+    table.bottomBorder tfoot { 
+      border-top: 1px solid; 
+    }
+    table.bottomBorder td { 
+      padding: 5px; 
+      border: 0px; 
+      text-align: center; 
+      /* font-size: 28px; */
+      line-height: 1.1;
+    }
+    table.bottomBorder th { 
+        border-bottom: 1px solid; 
+        padding: 5px; 
+        text-align: center;
+        vertical-align: middle;
+        /* font-size: 28px; */
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header d-flex justify-content-center align-items-center">
+    <div class="text-center text-white">
+      <h1>圖書館</h1>
+      <h2>整合行銷部</h2>
+    </div>
+  </header>
+
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: rgba(0,0,0,.9);">
+    <a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">首頁 <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#dice">抽籤</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            成員
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">呂錦棠</a>
+            <a class="dropdown-item" href="#">曾芷儀</a>
+            <a class="dropdown-item" href="#">許瑞宏</a>
+            <a class="dropdown-item" href="#">楊慎淇</a>
+            <a class="dropdown-item" href="#">洪筱婷</a>
+            <a class="dropdown-item" href="#">林芝萱</a>
+            <a class="dropdown-item" href="#">林昱宏</a>
+            <a class="dropdown-item" href="#">詹宛霖</a>
+            <a class="dropdown-item" href="#">黃薇</a>
+            <a class="dropdown-item" href="#">許智超</a>
+            <div class="dropdown-divider"></div>
+            <!-- <a class="dropdown-item" href="#">Something else here</a> -->
+          </div>
+        </li>
+        <!-- <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li> -->
+        <li class="nav-item">
+          <a class="nav-link" href="#">舊成員</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">館藏</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">聯絡我們</a>
+        </li>
+      </ul>
+        <!--
+                <form class="form-inline my-2 my-lg-0">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+        -->
+    </div>
+  </nav>
+
+
+  <section class="py-5">
+    <div class="container">
+      <h3 class="text-center">成員介紹</h3>
+      <h4 class="text-center">善男信女們</h4>
+      <br>
+      <div class="row">
+        <div class="col-lg-2 col-md-3 col-sm-4">
+          <img class="img-fluid" src="/img/photo02.jpg" style="border-radius: 100%">
+          <p class="text-center">呂錦棠</p>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4">
+          <img class="img-fluid" src="/img/photo01.jpg" style="border-radius: 100%">
+          <p class="text-center">曾芷儀</p>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4">
+          <img class="img-fluid" src="/img/photo02.jpg" style="border-radius: 100%">
+          <p class="text-center">許瑞宏</p>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4">
+          <img class="img-fluid" src="/img/photo01.jpg" style="border-radius: 100%">
+          <p class="text-center">楊慎淇</p>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4">
+          <img class="img-fluid" src="/img/photo01.jpg" style="border-radius: 100%">
+          <p class="text-center">洪筱婷</p>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4">
+          <img class="img-fluid" src="/img/photo01.jpg" style="border-radius: 100%">
+          <p class="text-center">林芝萱</p>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4">
+          <img class="img-fluid" src="/img/photo02.jpg" style="border-radius: 100%">
+          <p class="text-center">林昱宏</p>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4">
+          <img class="img-fluid" src="/img/photo01.jpg" style="border-radius: 100%">
+          <p class="text-center">詹菀霖</p>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4">
+          <img class="img-fluid" src="/img/photo01.jpg" style="border-radius: 100%">
+          <p class="text-center">黃薇</p>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4">
+          <img class="img-fluid" src="/img/photo01.jpg" style="border-radius: 100%">
+          <p class="text-center">許智超</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="dice" class="py-5">
+    <div class="container">
+      <h3 class="text-center text-white">抽籤</h3>
+      <h4 class="text-center text-white">抽靈籤卜聖卦</h4>
+      <br>
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card custom-card">
+              <div class="card-bg"></div>
+              <div class="card-body">
+                <h5 class="card-title text-white">拜請，拜請</h5>
+                <!--善男信女們 -->
+                <p class="text-white p-mar">拜請東海岸西海岸，北投西帽山，鶯歌出土炭，草山底勒出溫泉：
+                </p>
+                <!--(用逗號隔開)-->
+                <div class="more">
+                  <form class="input-group mb-3">
+                    <!-- 芷儀, 瑞宏, 慎淇, 芝萱, 筱婷, 智超, 昱宏, 宛霖, 黃薇, -->
+                    <input type="text" class="form-control border-radius" aria-describedby="button-addon2"
+                      id="more_input" value="瑞宏, 慎淇, 芝萱, 筱婷, 智超, 昱宏, 宛霖, 黃薇,">
+                    <div class="input-group-append">
+                      <button onclick="addData()" class="btn btn-primary border-radius" type="button"
+                        id="button-addon2"><i class="fas fa-user-plus"></i></button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div class="card custom-card p-mar10">
+              <div class="card-bg"></div>
+              <div class="card-body">
+                <h5 class="card-title text-white">拜請啊拜請</h5>
+                <p class="text-white p-mar">大仙王爺公，小仙王爺子：(雙擊刪除)</p>
+                <div class="name_list text-center" id="name_list" style="margin-bottom: 22px;">
+                  我是假影請，你來我就加了餅！
+                  <!--None! Not Ready! Please Add In.-->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card custom-card">
+              <div class="card-bg"></div>
+              <div class="card-body">
+                <h5 class="card-title text-white">搖你就搖過橋</h5>
+                <p class="text-white p-mar">不知有影還是無影，有影就喊三聲：</p>
+                <form class="result input-group mb-3" style="margin-top: 15px;">
+                  <div class="input-group-prepend">
+                    <button class="btn btn-light" type="button" id="button-addon1"><i class="fas fa-pray"
+                        style="font-size: 20px;"></i></button>
+                  </div>
+                  <input type="text" class="form-control text-center" id="oknum" name="oknum" readonly="readonly"
+                    placeholder="子孫有孝順沒！" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                </form>
+                <div class="bubox text-center">
+                  <button class="btn1" onclick="start()" accesskey="s">
+                    <i class="far fa-play-circle"></i>
+                    <!--開始-->
+                  </button>
+                  <button class="btn2" onclick="ok()" accesskey="o">
+                    <i class="far fa-stop-circle"></i>
+                    <!--停止-->
+                  </button>
+                  <button class="btn3" onclick="javascript:window.location.reload()">
+                    <i class="fas fa-undo-alt"></i>
+                    <!--重來-->
+                  </button>
+                </div>
+                <p class="py-2 mytext">草埔仔路上草青青，草埔仔路上啊草掛墘；
+                  有孝的媳婦是三餐燒，不孝的媳婦是過路搖啊過路搖，搖你著搖過橋喔~<br>
+                  獻紙來你嘛燒錢去啊，獻紙啊燒錢是要買路去啊！
+                  獻紙來你嘛燒錢去啊，獻紙啊燒錢是要買路去哦！
+                  行你就行，行到觀音佛祖廟，喔~<br>
+                  拜拜喔！來拜觀音菩薩喔！</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="py-5">
+        <div class="card custom-card">
+          <div class="card-bg"></div>
+          <div class="card-body">
+            <h4 class="text-center text-white py-1">演出表</h4>
+            <div class="d-flex justify-content-center align-items-center" style="margin-bottom: -10px;">
+              <table class="bottomBorder text-white" style="margin-bottom: 22px;">
+                <tr>
+                  <th>#</th>
+                  <th>1</th>
+                  <th>2</th>
+                  <th>3</th>
+                  <th>4</th>
+                  <th>5</th>
+                  <th>6</th>
+                  <th>7</th>
+                  <th>8</th>
+                  <th>9</th>
+                  <th>10</th>
+                </tr>
+                <tr>
+                  <td>芷儀</td>
+                  <td>9/13</td>
+                  <td>11/22</td>
+                  <td>1/17</td>
+                  <td>3/14</td>
+                  <td>5/2</td>
+                  <td>6/20</td>
+                  <td>10/9</td>
+                  <td>12/19</td>
+                  <td>─</td>
+                  <td>─</td>
+                </tr>
+                <tr>
+                  <td>瑞宏</td>
+                  <td>10/4</td>
+                  <td>10/18</td>
+                  <td>1/10</td>
+                  <td>1/31</td>
+                  <td>4/18</td>
+                  <td>6/6</td>
+                  <td>9/12</td>
+                  <td>11/7</td>
+                  <td>4/16</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>慎淇</td>
+                  <td>9/20</td>
+                  <td>11/1</td>
+                  <td>12/6</td>
+                  <td>1/17</td>
+                  <td>5/16</td>
+                  <td>6/13</td>
+                  <td>10/17</td>
+                  <td>11/21</td>
+                  <td>2/27</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>芝萱</td>
+                  <td>9/13</td>
+                  <td>11/15</td>
+                  <td>1/29</td>
+                  <td>2/14</td>
+                  <td>4/11</td>
+                  <td>5/23</td>
+                  <td>9/19</td>
+                  <td>2/6</td>
+                  <td style="color: orange;">4/23</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>昱宏</td>
+                  <td>─</td>
+                  <td>─</td>
+                  <td>11/29</td>
+                  <td>3/21</td>
+                  <td>3/28</td>
+                  <td>7/4</td>
+                  <td>10/24</td>
+                  <td>10/31</td>
+                  <td>3/19</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>筱婷</td>
+                  <td>─</td>
+                  <td>─</td>
+                  <td>─</td>
+                  <td>─</td>
+                  <td>4/25</td>
+                  <td>9/5</td>
+                  <td>9/19</td>
+                  <td>1/16</td>
+                  <td>3/26</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>宛霖</td>
+                  <td>─</td>
+                  <td>─</td>
+                  <td>─</td>
+                  <td>─</td>
+                  <td>─</td>
+                  <td>─</td>
+                  <td>─</td>
+                  <td>2/13</td>
+                  <td>3/12</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>黃薇</td>
+                  <td>─</td>
+                  <td>─</td>
+                  <td>─</td>
+                  <td>─</td>
+                  <td>─</td>
+                  <td>─</td>
+                  <td>─</td>
+                  <td>1/9</td>
+                  <td>2/20</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>智超</td>
+                  <td>10/4</td>
+                  <td>11/1</td>
+                  <td>12/27</td>
+                  <td>2/14</td>
+                  <td>3/28</td>
+                  <td>5/30</td>
+                  <td>9/12</td>
+                  <td>1/9</td>
+                  <td>4/9</td>
+                  <td></td> 
+                </tr>      
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+  <section>
+
+  </section>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+
+
+  <!-- ********** 抽獎 ********** -->
+  <script type="text/javascript">
+    var allData = {};
+    function addData() {
+      var input = document.getElementById("more_input");
+      var data = input.value;
+      input.value = '';
+      if (!data) { alert('還沒拜請，是要加「鬼」膩？'); return; }
+      data = data.replace("，", ",").replace(",,", ",").split(",");
+      var d, i, s = '';
+      for (i = 0; i < data.length; i++) {
+        d = data[i].replace(/(^\s*)|(\s*$)/g, '');
+        if (d && !allData[d]) {
+          allData[d] = -1;
+          s += '<span ondblclick="removeData(this)" title="雙擊刪除">' + d + '</span>';
+        }
+      }
+      var name_list = document.getElementById("name_list");
+      if (name_list.getElementsByTagName('span').length < 1) name_list.innerHTML = '';
+      name_list.innerHTML += s;
+      timer && start();
+    }
+    function removeData(obj) {
+      delete allData[obj.innerHTML];
+      obj.parentNode.removeChild(obj);
+    }
+    var timer;
+    var dataarr = [];
+    function change() {
+      document.getElementById("oknum").value = dataarr[GetRnd(0, dataarr.length - 1)];
+    }
+    function clear() {
+      clearInterval(timer);
+      timer = '';
+      document.getElementById("oknum").value = '';
+    }
+    function start() {
+      clear();
+      dataarr = [];
+      for (var d in allData) {
+        if (allData[d] === -1) dataarr.push(d);
+      }
+      if (dataarr.length < 1) {
+        alert('啊，沒有候選人，是要抽「鬼」膩？');
+        return;
+      }
+      timer = setInterval('change()', 46);
+    }
+    function ok() {
+      clearInterval(timer);
+      timer = '';
+      var lucky = document.getElementById("oknum").value;
+      if (!lucky) return;
+      var spans = document.getElementById("name_list").getElementsByTagName('span');
+      if (spans.length < 1) return;
+      for (i = 0; i < spans.length; i++) {
+        if (spans[i].innerHTML == lucky) {
+          spans[i].className = 'select';
+          allData[spans[i].innerHTML] = 1;
+        }
+      }
+    }
+    function GetRnd(min, max) {
+      return parseInt(Math.random() * (max - min + 1));
+    }
+  </script>
+</body>
+
+</html>
