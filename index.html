@@ -11,6 +11,7 @@
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <style>
@@ -18,8 +19,9 @@
     h1,
     h2,
     h3,
-    h4 {
-      font-family: 'Noto Sans TC', 微軟正黑體, 'Raleway', sans-serif;
+    h4,
+    h5 {
+      font-family: 'Raleway','Noto Sans TC', 微軟正黑體,  sans-serif;
     }
 
     h1 {
@@ -49,6 +51,15 @@
       background-size: cover;
       background-position: center center;
       background-attachment: fixed;
+    }
+
+    .m-border{
+      border-radius: 100%;
+      border: 1px solid #088A29;
+    }
+    .f-border{
+      border-radius: 100%;
+      border: 1px solid #f08;
     }
 
     #dice {
@@ -221,6 +232,65 @@
         vertical-align: middle;
         /* font-size: 28px; */
     }
+    .bg-m-roof{
+      background: rgba(181,253,148,1); /*rgba(255,102,198,1);*/
+      padding: 10px 0px 0px 10px;
+      /* display: flex; */
+    }
+    .bg-f-roof{
+      background: rgba(255,102,198,1);
+      padding: 10px 0px 0px 10px;
+      /* display: flex; */
+    }
+    #collection .bg-m-roof .fas{
+      color: rgb(24,109,6);
+      font-size: 1.8rem;
+      padding-left: .3rem;
+      padding-right: .8rem;
+    }
+    #collection .bg-f-roof .fas{
+      color: white; /* rgb(24,109,6);*/
+      font-size: 1.8rem;
+      padding-left: .3rem;
+      padding-right: .8rem;
+    }
+    #collection .bg-m-roof h5{
+      color:rgb(24,109,6);
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: .7;
+    }
+    #collection .bg-f-roof h5{
+      color:white;
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: .7;
+    }
+    #collection h6{
+      color: #696969;
+      font-family: 'Lobster', cursive;
+      font-size: .8rem;
+      line-height: .8;
+    }
+    #collection ol{
+      /* list-style-type: none; */
+      margin-left: -1rem; 
+      margin-bottom: -.2rem;  
+    }
+    #collection li{
+      padding-bottom: 6px;
+      font-size: 1rem;
+      letter-spacing: .5px;
+      color: #343;
+    }
+    #collection li:after{
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, #eee, #A9A9A9 100%, #fff);
+      margin-left: -.9rem
+    }
   </style>
 </head>
 
@@ -247,6 +317,12 @@
         <li class="nav-item">
           <a class="nav-link" href="#dice">抽籤</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#collection">館藏</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">舊成員</a>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
@@ -267,19 +343,15 @@
             <!-- <a class="dropdown-item" href="#">Something else here</a> -->
           </div>
         </li>
-        <!-- <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li> -->
-        <li class="nav-item">
-          <a class="nav-link" href="#">舊成員</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">館藏</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">聯絡我們</a>
-        </li>
-      </ul>
+      </ul>  
+        <!-- 
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>        
+          <li class="nav-item">
+            <a class="nav-link" href="#">聯絡我們</a>
+          </li>
+        -->      
         <!--
                 <form class="form-inline my-2 my-lg-0">
                   <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -297,43 +369,43 @@
       <br>
       <div class="row">
         <div class="col-lg-2 col-md-3 col-sm-4">
-          <img class="img-fluid" src="img/m01.jpg" style="border-radius: 100%">
+          <img class="img-fluid m-border" src="img/m01.jpg">
           <p class="text-center">呂錦棠</p>
         </div>
         <div class="col-lg-2 col-md-3 col-sm-4">
-          <img class="img-fluid" src="img/f01.jpg" style="border-radius: 100%">
+          <img class="img-fluid f-border" src="img/f01.jpg">
           <p class="text-center">曾芷儀</p>
         </div>
         <div class="col-lg-2 col-md-3 col-sm-4">
-          <img class="img-fluid" src="img/m01.jpg" style="border-radius: 100%">
+          <img class="img-fluid m-border" src="img/m01.jpg">
           <p class="text-center">許瑞宏</p>
         </div>
         <div class="col-lg-2 col-md-3 col-sm-4">
-          <img class="img-fluid" src="img/f01.jpg" style="border-radius: 100%">
+          <img class="img-fluid f-border" src="img/f01.jpg">
           <p class="text-center">楊慎淇</p>
         </div>
         <div class="col-lg-2 col-md-3 col-sm-4">
-          <img class="img-fluid" src="img/f01.jpg" style="border-radius: 100%">
+          <img class="img-fluid f-border" src="img/f01.jpg">
           <p class="text-center">洪筱婷</p>
         </div>
         <div class="col-lg-2 col-md-3 col-sm-4">
-          <img class="img-fluid" src="img/f01.jpg" style="border-radius: 100%">
+          <img class="img-fluid f-border" src="img/f01.jpg">
           <p class="text-center">林芝萱</p>
         </div>
         <div class="col-lg-2 col-md-3 col-sm-4">
-          <img class="img-fluid" src="img/m01.jpg" style="border-radius: 100%">
+          <img class="img-fluid m-border" src="img/m01.jpg">
           <p class="text-center">林昱宏</p>
         </div>
         <div class="col-lg-2 col-md-3 col-sm-4">
-          <img class="img-fluid" src="img/f01.jpg" style="border-radius: 100%">
+          <img class="img-fluid f-border" src="img/f01.jpg">
           <p class="text-center">詹菀霖</p>
         </div>
         <div class="col-lg-2 col-md-3 col-sm-4">
-          <img class="img-fluid" src="img/f01.jpg" style="border-radius: 100%">
+          <img class="img-fluid f-border" src="img/f01.jpg">
           <p class="text-center">黃薇</p>
         </div>
         <div class="col-lg-2 col-md-3 col-sm-4">
-          <img class="img-fluid" src="img/m01.jpg" style="border-radius: 100%">
+          <img class="img-fluid m-border" src="img/m01.jpg">
           <p class="text-center">許智超</p>
         </div>
       </div>
@@ -424,143 +496,161 @@
       </div>
 
       <div class="py-5">
+        <h4 class="text-center text-white py-1">演出表</h4>
+        <br>
         <div class="card custom-card">
           <div class="card-bg"></div>
           <div class="card-body">
-            <h4 class="text-center text-white py-1">演出表</h4>
+            <h5 class="card-title text-white"></h5>
             <div class="d-flex justify-content-center align-items-center" style="margin-bottom: -10px;">
-              <table class="bottomBorder text-white" style="margin-bottom: 22px;">
-                <tr>
-                  <th>#</th>
-                  <th>1</th>
-                  <th>2</th>
-                  <th>3</th>
-                  <th>4</th>
-                  <th>5</th>
-                  <th>6</th>
-                  <th>7</th>
-                  <th>8</th>
-                  <th>9</th>
-                  <th>10</th>
-                </tr>
-                <tr>
-                  <td>芷儀</td>
-                  <td>9/13</td>
-                  <td>11/22</td>
-                  <td>1/17</td>
-                  <td>3/14</td>
-                  <td>5/2</td>
-                  <td>6/20</td>
-                  <td>10/9</td>
-                  <td>12/19</td>
-                  <td>─</td>
-                  <td>─</td>
-                </tr>
-                <tr>
-                  <td>瑞宏</td>
-                  <td>10/4</td>
-                  <td>10/18</td>
-                  <td>1/10</td>
-                  <td>1/31</td>
-                  <td>4/18</td>
-                  <td>6/6</td>
-                  <td>9/12</td>
-                  <td>11/7</td>
-                  <td>4/16</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>慎淇</td>
-                  <td>9/20</td>
-                  <td>11/1</td>
-                  <td>12/6</td>
-                  <td>1/17</td>
-                  <td>5/16</td>
-                  <td>6/13</td>
-                  <td>10/17</td>
-                  <td>11/21</td>
-                  <td>2/27</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>芝萱</td>
-                  <td>9/13</td>
-                  <td>11/15</td>
-                  <td>1/29</td>
-                  <td>2/14</td>
-                  <td>4/11</td>
-                  <td>5/23</td>
-                  <td>9/19</td>
-                  <td>2/6</td>
-                  <td style="color: orange;">4/23</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>昱宏</td>
-                  <td>─</td>
-                  <td>─</td>
-                  <td>11/29</td>
-                  <td>3/21</td>
-                  <td>3/28</td>
-                  <td>7/4</td>
-                  <td>10/24</td>
-                  <td>10/31</td>
-                  <td>3/19</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>筱婷</td>
-                  <td>─</td>
-                  <td>─</td>
-                  <td>─</td>
-                  <td>─</td>
-                  <td>4/25</td>
-                  <td>9/5</td>
-                  <td>9/19</td>
-                  <td>1/16</td>
-                  <td>3/26</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>宛霖</td>
-                  <td>─</td>
-                  <td>─</td>
-                  <td>─</td>
-                  <td>─</td>
-                  <td>─</td>
-                  <td>─</td>
-                  <td>─</td>
-                  <td>2/13</td>
-                  <td>3/12</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>黃薇</td>
-                  <td>─</td>
-                  <td>─</td>
-                  <td>─</td>
-                  <td>─</td>
-                  <td>─</td>
-                  <td>─</td>
-                  <td>─</td>
-                  <td>1/9</td>
-                  <td>2/20</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>智超</td>
-                  <td>10/4</td>
-                  <td>11/1</td>
-                  <td>12/27</td>
-                  <td>2/14</td>
-                  <td>3/28</td>
-                  <td>5/30</td>
-                  <td>9/12</td>
-                  <td>1/9</td>
-                  <td>4/9</td>
-                  <td></td> 
-                </tr>      
-              </table>
+              <div class="table-responsive-md">
+                <table class="tabel table-hover bottomBorder text-white" style="margin-bottom: 22px;">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">10</th>
+                      <th scope="col">9</th>
+                      <th scope="col">8</th>
+                      <th scope="col">7</th>
+                      <th scope="col">6</th>
+                      <th scope="col">5</th>
+                      <th scope="col">4</th>                      
+                      <th scope="col">3</th>
+                      <th scope="col">2</th>
+                      <th scope="col">1</th>
+                      <th scope="col">#</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td scope="row" class="text-nowrap">芷儀</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>12/19</td>
+                      <td>10/9</td>
+                      <td>6/20</td>
+                      <td>5/2</td>
+                      <td>3/14</td>
+                      <td>1/17</td>
+                      <td>11/22</td>
+                      <td>9/13</td>
+                      <td scope="row" class="text-nowrap">芷儀</td>
+                    </tr>
+                    <tr>
+                      <td scope="row">瑞宏</td>
+                      <td></td>
+                      <td>4/16</td>
+                      <td>11/7</td>
+                      <td>9/12</td>
+                      <td>6/6</td>
+                      <td>4/18</td>
+                      <td>1/31</td>
+                      <td>1/10</td>
+                      <td>10/18</td>
+                      <td>10/4</td>
+                      <td scope="row">瑞宏</td>
+                    </tr>
+                    <tr>
+                      <td scope="row">慎淇</td>
+                      <td></td>
+                      <td>2/27</td>
+                      <td>11/21</td>
+                      <td>10/17</td>
+                      <td>6/13</td>
+                      <td>5/16</td>
+                      <td>1/17</td>
+                      <td>12/6</td>
+                      <td>11/1</td>
+                      <td>9/20</td>
+                      <td scope="row">慎淇</td>
+                    </tr>
+                    <tr>
+                      <td scope="row">芝萱</td>
+                      <td></td>
+                      <td style="color: orange;">4/30</td>
+                      <td>2/6</td>
+                      <td>9/19</td>
+                      <td>5/23</td>
+                      <td>4/11</td>
+                      <td>2/14</td>
+                      <td>1/29</td>
+                      <td>11/15</td>
+                      <td>9/13</td>
+                      <td scope="row">芝萱</td>
+                    </tr>
+                    <tr>
+                      <td scope="row">昱宏</td>
+                      <td></td>
+                      <td>3/19</td>
+                      <td>10/31</td>
+                      <td>10/24</td>
+                      <td>7/4</td>
+                      <td>3/28</td>
+                      <td>3/21</td>
+                      <td>11/29</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td scope="row">昱宏</td>
+                    </tr>
+                    <tr>
+                      <td scope="row">筱婷</td>
+                      <td></td>
+                      <td>3/26</td>
+                      <td>1/16</td>
+                      <td>9/19</td>
+                      <td>9/5</td>
+                      <td>4/25</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td scope="row">筱婷</td>
+                    </tr>
+                    <tr>
+                      <td scope="row">宛霖</td>
+                      <td></td>
+                      <td>3/12</td>
+                      <td>2/13</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>   
+                      <td scope="row">宛霖</td>
+                    </tr>
+                    <tr>
+                      <td scope="row">黃薇</td>
+                      <td></td>
+                      <td>2/20</td>
+                      <td>1/9</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td scope="row">黃薇</td>
+                    </tr>
+                    <tr>
+                      <td scope="row">智超</td>
+                      <td></td>
+                      <td>4/9</td>
+                      <td>1/9</td>
+                      <td>9/12</td>
+                      <td>5/30</td>
+                      <td>3/28</td>
+                      <td>2/14</td>
+                      <td>12/27</td>
+                      <td>11/1</td>
+                      <td>10/4</td>
+                      <td scope="row">智超</td>
+                    </tr>
+                  </tbody>      
+                </table>
+              </div>
             </div>
           </div>
         </div>
@@ -573,10 +663,307 @@
 
 
 
-  <section>
 
-  </section>
+  <section id="collection" class="py-5">
+    <div class="container">
+      <h3 class="text-center">館藏</h3>
+      <h4 class="text-center">書中自有顏如玉</h4>
+      <br>
+      <div class="row">
+        <!-- 第一欄 -->
+        <div class="col-lg-4 col-md-6">
+          <!-- 呂錦棠 -->
+          <div class="card" style="width: 23rem;">
+            <div class="card-header d-flex  justify-content-top bg-m-roof">
+              <i class="fas fa-male"></i>
+              <div>
+                <h5>呂錦棠</h5>
+                <h6>Ben</h6>
+              </div>
+            </div>
+            <div class="card-body">
+              <ol>
+                <li>世界冠軍紙飛機</li>
+                <li>決斷的演算─預測、分析與好決定的 11 堂邏輯課</li>
+                <li>地圖大歷史：探索世界上最具時代意義的偉大地圖</li>
+                <li>便利店人間</li>
+                <li>2018 台北米其林指南 Taipei：The MICHELIN</li>
+                <li>拚死也要去的世界絕景</li>
+                <li>1945 零年─現代世界的夢想與夢碎之路</li>
+                <li>心的經典─心經新釋</li>
+                <li>這樣裝潢，不後悔</li>              
+              </ol>
+            </div>
+          </div>
+          <!-- 楊慎淇 -->
+          <div class="card" style="width: 23rem;">
+            <div class="card-header d-flex  justify-content-top bg-f-roof">
+              <i class="fas fa-female"></i>
+              <div>
+                <h5>楊慎淇</h5>
+                <h6>ShenChi</h6>
+              </div>
+            </div>
+            <div class="card-body">
+              <ol>
+                <li>第一次油漆就上手</li>
+                <li>雪球：巴菲特傳</li>
+                <li>五代中醫救命之方</li>
+                <li>The Science of Success</li>
+                <li>Good Profit</li>
+                <li>馬雲管理日志</li>
+                <li>屋主都說讚的居家好設計 350+</li>
+                <li>薑黃的秘密</li>
+                <li>電子商務─新商業革命</li>
+                <li>如何從台股賺一億</li>
+                <li>專案管理聖經</li>
+                <li>神奇的肝膽排石法</li>
+                <li>行銷思想</li>
+                <li>牛奶可樂經濟學</li>
+                <li>向宇宙下訂單</li>
+                <li>幸福退休新時代</li> 
+                <li>只買 4 支股，年賺 18%</li>              
+              </ol>
+            </div>
+          </div>
+          <!-- 洪筱婷 -->
+          <div class="card" style="width: 23rem;">
+            <div class="card-header d-flex  justify-content-top bg-f-roof">
+              <i class="fas fa-female"></i>
+              <div>
+                <h5>洪筱婷</h5>
+                <h6>Amal</h6>
+              </div>
+            </div>
+            <div class="card-body">
+              <ol>
+                <li>在咖啡冷掉之前</li>
+                <li>世界太 boring 我們需要文藝復興</li>
+                <li>不懂神話就只能看裸體了啊</li>
+                <li>台灣史上最有梗的台灣史</li>
+                <li>藝術家的一日廚房：學校沒教的藝術史</li>
+                <li>我在外交部工作</li>
+                <li>手繪台灣人 400 年史</li>
+                <li>台北城市散步</li>
+                <li>巴黎地鐵站的歷史課</li>
+                <li>寫給年輕人的古典音樂小史</li>   
+                <li>維梅爾的帽子：揭開十七世紀全球貿易的序幕</li>
+                <li>看圖賞味葡萄酒圖鑑</li>     
+              </ol>
+            </div>
+          </div>
+          <!-- 許智超 -->
+          <div class="card" style="width: 23rem;">
+            <div class="card-header d-flex  justify-content-top bg-m-roof">
+              <i class="fas fa-male"></i>
+              <div>
+                <h5>許智超</h5>
+                <h6>MCW</h6>
+              </div>
+            </div>
+            <div class="card-body">
+              <ol>
+                <li>膽小別看畫</li>
+                <li>跑者時代</li>
+                <li>幹大事的閒聊力</li>
+                <li>惡血</li>
+                <li>重慶大廈</li>
+                <li>奧運的詛咒</li>
+                <li>獨生</li>
+                <li>網路讓我們變笨？</li>
+                <li>餐桌上的宋朝</li>
+                <li>亦近亦遠的東南亞</li>   
+                <li>HOWFUN 如何爽當 youtubeer</li>
+                <li>香港電影血與骨</li>
+                <li>靠包裝就能賣</li>  
+              </ol>
+            </div>
+          </div>
+        </div>    
+          
+        <!-- 第二欄     -->
+        <div class="col-lg-4 col-md-6">
+          <!-- 曾芷儀 -->
+          <div class="card" style="width: 23rem;">
+            <div class="card-header d-flex  justify-content-top bg-f-roof">
+              <i class="fas fa-female"></i>
+              <div>
+                <h5>曾芷儀</h5>
+                <h6>Na</h6>
+              </div>
+            </div>
+            <div class="card-body">
+              <ol>
+                <li>正向教養</li>
+                <li>愛是一切的答案</li>
+                <li>靈魂之旅</li>
+                <li>心靈雞湯</li>
+                <li>被討厭的勇氣二部曲完結篇</li>
+                <li>你值得過更好的生活</li>
+                <li>開啟高敏感孩子天賦</li>
+                <li>孩子，先別急著吃棉花糖</li>
+                <li>有錢人想的和你不一樣</li>
+                <li>為什麼你不敢面對真實的自己</li>
+                <li>練習，喜歡自己</li>
+                <li>秘密</li>
+                <li>零極限：創造健康、平靜與財富的夏威夷療法</li>
+                <li>Hero：活出你內在的英雄</li>
+                <li>向宇宙下訂單</li>
+                <li>想像5年後的你</li>
+                <li>失落的致富經典</li>
+                <li>斜槓青年</li>
+                <li>時間的陷阱</li>
+                <li>覺醒的你</li>
+                <li>小王子</li>
+                <li>富爸爸，窮爸爸</li>
+              </ol>
+            </div>
+          </div>
+          <!-- 林芝萱 -->
+          <div class="card" style="width: 23rem;">
+            <div class="card-header d-flex  justify-content-top bg-f-roof">
+              <i class="fas fa-female"></i>
+              <div>
+                <h5>林芝萱</h5>
+                <h6>Susan</h6>
+              </div>
+            </div>
+            <div class="card-body">
+              <ol>
+                <li>這樣 ○ 那樣 X 馬上學好設計</li>
+                <li>工作，剛剛好就好</li>
+                <li>設計心理學</li>
+                <li>協槓青年</li>
+                <li>被討厭的勇氣</li>
+                <li>打動人心的產品設計</li>
+                <li>一擊奏效的社群行銷術</li>
+                <li>敏捷與 Scrum 軟體開發速成</li>
+                <li>願你的深情，能被溫柔以待</li>
+                <li>刻意練習：原創者全面解析，比天賦更關鍵的學習法</li>
+                <li>如果可以簡單，誰想要複雜</li>
+                <li>你的孩子不是你的孩子</li>
+              </ol>
+            </div>
+          </div>
+          <!-- 林昱宏 -->
+          <div class="card" style="width: 23rem;">
+            <div class="card-header d-flex  justify-content-top bg-m-roof">
+              <i class="fas fa-male"></i>
+              <div>
+                <h5>林昱宏</h5>
+                <h6>Hung</h6>
+              </div>
+            </div>
+            <div class="card-body">
+              <ol>
+                <li>橡皮擦計畫</li>
+                <li>動物農莊</li>
+                <li>動物農莊求生計</li>
+                <li>四騎士主宰的未來</li>
+                <li>好策略‧壞策略</li>
+                <li>貝佐斯傳</li>
+                <li>我絕非虛構的美好七年</li>
+                <li>為什麼 Google、LinkedIn、波音、高通、迪士尼都找他合作？</li>
+                <li>窮查理的普通常識</li>
+                <li>大破壞</li>
+                <li>兩年八個月又二十八夜</li>
+                <li>創意天才的蝴蝶思考術</li>
+              </ol>
+            </div>
+          </div>
+        </div>
 
+
+        <!-- 第三欄     -->
+        <div class="col-lg-2 col-md-3 col-sm-4">
+          <!-- 許瑞宏 -->
+          <div class="card" style="width: 23rem;">
+            <div class="card-header d-flex  justify-content-top bg-m-roof">
+              <i class="fas fa-male"></i>
+              <div>
+                <h5>許瑞宏</h5>
+                <h6>egg</h6>
+              </div>
+            </div>
+            <div class="card-body">
+              <ol>
+                <li>惡意</li>
+                <li>解憂雜貨店</li>
+                <li>寫作革命</li>
+                <li>穿裙子的男孩</li>
+                <li>惡血</li>
+                <li>基因</li>
+                <li>因為愛，我們呼吸</li>
+                <li>了解「人」，你才知道怎麼設計！</li>
+                <li>深夜小狗神祕習題</li>
+                <li>小說課 I ─ 折磨讀者的祕密</li>
+                <li>小說課 II ─ 偷故事的人</li>
+                <li>小說課 III ─ 偷電影的故事賊</li>
+                <li>餘震</li>
+                <li>這就是我來到這世界的理由</li>
+                <li>你的孩子不是你的孩子</li>
+                <li>故事 1：3 分鐘說 18 萬個故事，打造影響力</li>
+                <li>故事 2：99% 有效的故事行銷，創造品牌力</li>
+                <li>當最後一個音符輕柔落下</li>
+                <li>不當行為</li>
+                <li>七個會議</li>
+                <li>新參者</li>
+                <li>親愛的臥底經濟學家</li>
+                <li>童話裡隱藏的世界史</li>
+                <li>禁忌的魔術</li>
+                <li>在天堂遇見的五個人</li>
+                <li>CSS 大全</li>
+                <li>在天堂遇見的下一個人</li>
+                <li>故事行銷</li>
+              </ol>
+            </div>
+          </div>
+          <!-- 詹宛霖 -->
+          <div class="card" style="width: 23rem;">
+            <div class="card-header d-flex  justify-content-top bg-f-roof">
+              <i class="fas fa-female"></i>
+              <div>
+                <h5>詹宛霖</h5>
+                <h6>Astrid</h6>
+              </div>
+            </div>
+            <div class="card-body">
+              <ol>
+                <li>未來年表</li>
+                <li>2025 無齡時代：迎接你我的超高齡社會</li>
+                <li>無毒好生活</li>
+                <li>別再錯用你的腦</li>
+                <li>Marketing 4.0</li>
+                <li>像芬蘭這樣教</li>
+                <li>讓天賦自由</li>
+              </ol>
+            </div>
+          </div>
+          <!-- 黃薇 -->
+          <div class="card" style="width: 23rem;">
+            <div class="card-header d-flex  justify-content-top bg-f-roof">
+              <i class="fas fa-female"></i>
+              <div>
+                <h5>黃薇</h5>
+                <h6>Vivienne</h6>
+              </div>
+            </div>
+            <div class="card-body">
+              <ol>
+                <li>精準用腦</li>
+                <li>原子習慣</li>
+                <li>二十一世紀生死課</li>
+                <li>閒暇與無聊</li>
+                <li>變老的勇氣</li>
+                <li>不斷幸福論</li>
+                <li>怪奇事物所：你知道嗎？其實我們都很怪！</li>
+              </ol>
+            </div>
+          </div>
+        </div>     
+      </div>
+    </div>
+  </section>  
 
 
 
