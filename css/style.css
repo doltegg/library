@@ -37,7 +37,7 @@ h4 {
 
 .header {
   height: 100vh;
-  background-image: url(https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1153&q=80);
+  background-image: url(https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1649&q=80);
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
@@ -56,7 +56,7 @@ h4 {
   /* background-image: url(https://images.unsplash.com/photo-1586941963134-6486b671b809?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80); */
   /* background-image: url(https://images.unsplash.com/photo-1585066437551-230239e3131e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80); */
   /* background-image: url(https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=841&q=80); */
-  background-image: url(https://images.unsplash.com/photo-1584880368838-f60e501e7493?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80);
+  background-image: url(https://images.unsplash.com/photo-1584880368838-f60e501e7493?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1649&q=80);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -92,7 +92,7 @@ h4 {
   bottom: -20px;
   filter: blur(8px);
   border-radius: 10px;
-  background-image: url(https://images.unsplash.com/photo-1584880368838-f60e501e7493?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80);
+  background-image: url(https://images.unsplash.com/photo-1584880368838-f60e501e7493?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1649&q=80);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -237,6 +237,13 @@ table.bottomBorder th {
   padding: 10px 0px 0px 10px;
   /* display: flex; */
 }
+/* #collection {
+  border: 2rem solid transparent;
+  background-image: linear-gradient(gray,gray), url(https://images.unsplash.com/photo-1501520158826-76df880863a3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3000&q=80);
+  background-origin: padding-box, border-box;
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
 #collection .bg-m-roof .fas{
   color: rgb(24,109,6);
   font-size: 1.8rem;
@@ -285,4 +292,34 @@ table.bottomBorder th {
   height: 1px;
   background: linear-gradient(to right, #eee, #A9A9A9 100%, #fff);
   margin-left: -.9rem
+}
+
+#outprint {
+  background-image: linear-gradient(45deg,#777,#eee);
+}
+#outprint .bg-roof{
+  background: #222;
+  padding: 10px 0px 0px 10px;
+}
+#outprint h5{
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: .7;
+  padding-left: .5rem;
+}
+#outprint small{
+  font-size: .6rem;
+  font-family: 'Lobster';
+  color: darkgray;
+  padding-left: .5rem;
+}
+
+#outprint ol{
+  margin-left: -1rem; 
+  margin-bottom: -.2rem;
+  color: #666;
+}
+#outprint .body-bg{
+  background: #DCDCDC; 
 }
