@@ -19,6 +19,7 @@
 </head>
 
 <body>
+  <!-- 標題 -->
   <header class="header d-flex justify-content-center align-items-center">
     <div class="text-center text-white">
       <h1>圖書館</h1>
@@ -26,13 +27,13 @@
     </div>
   </header>
 
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: rgba(0,0,0,.9);">
     <a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
@@ -45,7 +46,7 @@
           <a class="nav-link" href="#collection">館藏</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">舊成員</a>
+          <a class="nav-link" href="#outprint">絕版品</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -85,7 +86,7 @@
     </div>
   </nav>
 
-  <!-- 成員介紹 -->
+  <!-- 1.成員介紹 -->
   <section class="py-5">
     <div class="container">
       <h3 class="text-center">成員介紹</h3>
@@ -136,6 +137,7 @@
     </div>
   </section>
 
+  <!-- 2.抽籤 -->
   <section id="dice" class="py-5">
     <div class="container">
       <h3 class="text-center text-white">抽籤</h3>
@@ -220,7 +222,6 @@
           </div>
         </div>
       <!-- </div> -->
-
       <div class="py-5">
         <h4 class="text-center text-white py-1">演出表</h4>
         <br>
@@ -384,14 +385,7 @@
     </div>
   </section>
 
-
-
-
-
-
-
-
-
+  <!-- 3.館藏 -->
   <section id="collection" class="py-5">
     <div class="container">
       <h3 class="text-center">館藏</h3>
@@ -401,8 +395,8 @@
         <!-- 第一欄 -->
         <div class="col-lg-4 col-md-6">
           <!-- 呂錦棠 -->
-          <div class="card" style="width: 23rem;">
-            <div class="card-header d-flex  justify-content-top bg-m-roof">
+          <div class="card">
+            <div class="card-header d-flex bg-m-roof">
               <i class="fas fa-male"></i>
               <div>
                 <h5>呂錦棠</h5>
@@ -417,15 +411,15 @@
                 <li>便利店人間</li>
                 <li>2018 台北米其林指南 Taipei：The MICHELIN</li>
                 <li>拚死也要去的世界絕景</li>
-                <li>1945 零年─現代世界的夢想與夢碎之路</li>
+                <li>零年：1945年，現代世界的夢想與夢碎之路</li>
                 <li>心的經典─心經新釋</li>
                 <li>這樣裝潢，不後悔</li>              
               </ol>
             </div>
           </div>
           <!-- 楊慎淇 -->
-          <div class="card" style="width: 23rem;">
-            <div class="card-header d-flex  justify-content-top bg-f-roof">
+          <div class="card">
+            <div class="card-header d-flex bg-f-roof">
               <i class="fas fa-female"></i>
               <div>
                 <h5>楊慎淇</h5>
@@ -455,8 +449,8 @@
             </div>
           </div>
           <!-- 洪筱婷 -->
-          <div class="card" style="width: 23rem;">
-            <div class="card-header d-flex  justify-content-top bg-f-roof">
+          <div class="card">
+            <div class="card-header d-flex bg-f-roof">
               <i class="fas fa-female"></i>
               <div>
                 <h5>洪筱婷</h5>
@@ -481,8 +475,8 @@
             </div>
           </div>
           <!-- 許智超 -->
-          <div class="card" style="width: 23rem;">
-            <div class="card-header d-flex  justify-content-top bg-m-roof">
+          <div class="card">
+            <div class="card-header d-flex bg-m-roof">
               <i class="fas fa-male"></i>
               <div>
                 <h5>許智超</h5>
@@ -512,8 +506,8 @@
         <!-- 第二欄     -->
         <div class="col-lg-4 col-md-6">
           <!-- 曾芷儀 -->
-          <div class="card" style="width: 23rem;">
-            <div class="card-header d-flex  justify-content-top bg-f-roof">
+          <div class="card">
+            <div class="card-header d-flex bg-f-roof">
               <i class="fas fa-female"></i>
               <div>
                 <h5>曾芷儀</h5>
@@ -548,8 +542,8 @@
             </div>
           </div>
           <!-- 林芝萱 -->
-          <div class="card" style="width: 23rem;">
-            <div class="card-header d-flex  justify-content-top bg-f-roof">
+          <div class="card">
+            <div class="card-header d-flex bg-f-roof">
               <i class="fas fa-female"></i>
               <div>
                 <h5>林芝萱</h5>
@@ -574,8 +568,8 @@
             </div>
           </div>
           <!-- 林昱宏 -->
-          <div class="card" style="width: 23rem;">
-            <div class="card-header d-flex  justify-content-top bg-m-roof">
+          <div class="card">
+            <div class="card-header d-flex bg-m-roof">
               <i class="fas fa-male"></i>
               <div>
                 <h5>林昱宏</h5>
@@ -603,10 +597,11 @@
 
 
         <!-- 第三欄     -->
-        <div class="col-lg-2 col-md-3 col-sm-4">
+        <div class="col-lg-4 col-md-6">
           <!-- 許瑞宏 -->
-          <div class="card" style="width: 23rem;">
-            <div class="card-header d-flex  justify-content-top bg-m-roof">
+          <div class="card">
+            <div class="card-header d-flex bg-m-roof">
+            <!-- <div class="card-header d-flex  justify-content-top bg-m-roof"> -->
               <i class="fas fa-male"></i>
               <div>
                 <h5>許瑞宏</h5>
@@ -647,8 +642,8 @@
             </div>
           </div>
           <!-- 詹宛霖 -->
-          <div class="card" style="width: 23rem;">
-            <div class="card-header d-flex  justify-content-top bg-f-roof">
+          <div class="card">
+            <div class="card-header d-flex bg-f-roof">
               <i class="fas fa-female"></i>
               <div>
                 <h5>詹宛霖</h5>
@@ -668,8 +663,8 @@
             </div>
           </div>
           <!-- 黃薇 -->
-          <div class="card" style="width: 23rem;">
-            <div class="card-header d-flex  justify-content-top bg-f-roof">
+          <div class="card">
+            <div class="card-header d-flex bg-f-roof">
               <i class="fas fa-female"></i>
               <div>
                 <h5>黃薇</h5>
@@ -693,10 +688,209 @@
     </div>
   </section>  
 
-
-
-
-
+  <!-- 4.絕版品 -->
+  <section id="outprint" class="py-5">
+    <div class="container">
+      <h3 class="text-center">絕版品</h3>
+      <h4 class="text-center">珍重再見</h4>
+      <br>
+      <div class="row">
+        <!-- 第一欄 -->
+        <div class="col-lg-4 col-md-6">
+          <!-- 鄭陳澤 -->
+          <div class="card">
+            <div class="card-header bg-roof">
+                <h5>鄭陳澤<small>Andy</small></h5>
+            </div>
+            <div class="card-body body-bg">
+              <ol>
+                <li>錢買不到的東西</li>
+                <li>失控的同理心</li>
+                <li>外商顧問超強資料製作術</li>
+                <li>刻意練習</li>
+                <li>好人總是自以為是</li>
+                <li>為什麼我們需要公共哲學</li>
+                <li>隱藏人格們的旅行清單</li>
+                <li>網路連鎖效應</li>
+                <li>縮時社會</li>
+                <li>斜槓青年</li>
+                <li>被討厭的勇氣</li>
+                <li>光榮城市</li>
+              </ol>
+            </div>
+          </div>
+          <!-- 劉慧伶 -->
+          <div class="card">
+            <div class="card-header bg-roof">
+                <h5>劉慧伶<small></small></h5>
+            </div>
+            <div class="card-body body-bg">
+              <ol>
+                <li>尖叫感 (33 個關鍵文案技巧)</li>
+                <li>肌內效魔法貼</li>
+                <li>成功廣告影片的創意與製作</li>
+                <li>微電影製作與行銷這檔事</li>
+                <li>創意是發現不是發明</li>
+                <li>迎向無限挑戰─劉在錫</li>
+                <li>貼就有效</li>
+                <li>基礎牙體技術學</li>
+                <li>安靜是種超能力</li>
+                <li>用 LINE 貼圖月入 30 萬</li>
+                <li>大腦衝浪</li>
+                <li>微縮模型雙料冠軍的創作小世界</li>
+              </ol>
+            </div>
+          </div>
+          <!-- 張峻銘 -->
+          <div class="card">
+            <div class="card-header bg-roof">
+                <h5>張峻銘<small></small></h5>
+            </div>
+            <div class="card-body body-bg">
+              <ol>
+                <li>中川式護眼法</li>
+                <li>精準明確思考術</li>
+                <li>內容電力公司</li>
+                <li>引爆趨勢</li>
+                <li>影響力</li>
+                <li>誰說人是理性的</li>
+                <li>鉤癮效應</li>
+                <li>聰明捷徑</li>
+                <li>你想要的幸福藏在你不要的改變裡</li>
+                <li>競爭力</li>
+                <li>內向心理學</li>
+                <li>瘋潮行銷</li>
+                <li>超高效心智圖法</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <!-- 第二欄 -->
+        <div class="col-lg-4 col-md-6">
+          <!-- 黃于庭 -->
+          <div class="card">
+            <div class="card-header bg-roof">
+                <h5>黃于庭<small>Yuting</small></h5>
+            </div>
+            <div class="card-body body-bg">
+              <ol>
+                <li>翻身準則</li>
+                <li>腦科學時間術</li>
+                <li>菜鳥變成問題解決高手</li>
+                <li>魔球</li>
+                <li>簡報的藝術</li>
+                <li>向上管理</li>
+                <li>師父</li>
+                <li>橡皮擦計畫</li>
+                <li>ETF 煉金術</li>
+                <li>五線譜投資術</li>
+                <li>這些憑什麼爆紅</li>
+                <li>斜槓青年</li>
+              </ol>
+            </div>
+          </div>                   
+          <!-- 林辰 -->
+          <div class="card">
+            <div class="card-header bg-roof">
+                <h5>林辰<small></small></h5>
+            </div>
+            <div class="card-body body-bg">
+              <ol>
+                <li>解憂雜貨店</li>
+                <li>惡血</li>
+                <li>被討厭的勇氣</li>
+                <li>被討厭的勇氣 2</li>
+                <li>獲利團隊</li>
+                <li>電商 Zero to one</li>
+                <li>優秀的人，都敢對自己下手</li>
+                <li>光榮城市</li>
+                <li>你的善良必須有點鋒芒</li>
+                <li>情緒勒索</li>
+                <li>真確</li>
+                <li>超越地表最強小編</li>
+              </ol>
+            </div>
+          </div>
+          <!-- 許立緯 -->
+          <div class="card">
+            <div class="card-header bg-roof">
+                <h5>許立緯<small>David</small></h5>
+            </div>
+            <div class="card-body body-bg">
+              <ol>
+                <li>待辦事項這樣列工作當場完成一半</li>
+                <li>High Performance Habits</li>
+                <li>與成功有約：高效能人士的七個習慣</li>
+                <li>刻意練習：原創者全面解析，比天賦更關鍵的學習法</li>
+                <li>為什麼這樣工作會快、準、好：全球瘋行的工作效率升級方案，讓你的生活不再辛苦，工作更加省時省力</li>
+                <li>為什麼我們這樣生活，那樣工作?</li>
+                <li>這輩子，只能這樣嗎?你是自己最大的敵人</li>
+                <li>峰與谷：超越逆境、享受順境的人生禮物</li>
+                <li>周一清晨的領導課</li>
+                <li>先別急著吃棉花糖</li>
+                <li>成功從聚焦一件事開始</li>
+                <li>想成功，先吃了那隻青蛙：博恩 ‧ 崔西提升個人效力 21 個技巧</li>
+                <li>原來有錢人都這麼做：效法有錢人的理財術，學習富人的致富之道</li>
+                <li>Mindset: The New Psychology of Success</li>
+                <li>Deep Work: Rules for Focused Success in a Distracted World</li>
+              </ol>
+            </div>
+          </div> 
+        </div>
+        <!-- 第三欄 -->
+        <div class="col-lg-4 col-md-6">
+          <!-- 張婷雅 -->
+          <div class="card">
+            <div class="card-header bg-roof">
+                <h5>張婷雅<small></small></h5>
+            </div>
+            <div class="card-body body-bg">
+              <ol>
+                <li>6 分鐘日記的魔法</li>
+                <li>被討厭的勇氣</li>
+                <li>不要在該奮鬥時選擇安逸</li>
+                <li>如何在 LINE、FB 寫出爆款文案</li>
+                <li>原則：生活和工作</li>
+              </ol>
+            </div>
+          </div>
+          <!-- 林祐任 -->
+          <div class="card">
+            <div class="card-header bg-roof">
+                <h5>林祐任<small></small></h5>
+            </div>
+            <div class="card-body body-bg">
+              <ol>
+                <li>從東南亞到東協：存異求同的五百年東南亞史</li>
+                <li>馬雲：未來已來</li>
+                <li>A Splendid Exchange: How Trade Shaped the World</li>
+                <li>Factfulness: Ten Reasons We’re Wrong About the World - and Why Things Are Better Than You Think</li>
+                <li>華頓商學院最受歡迎的談判課:上完這堂課，世界都會聽你的</li>
+                <li>第五項修練：學習型組織的藝術與實務</li>
+                <li>智慧型股票投資人</li>
+                <li>資本的世界史：財富哪裡來?經濟成長、貨幣與危機的歷史</li>
+                <li>複雜問題的策略思考 &amp 分析</li>
+                <li>商業冒險：華爾街的 12 個經典故事</li>
+                <li>最后一公里的哲學：電商物流全鏈條運營管理</li>
+                <li>手機消費革命：行動化時代影響消費者決策的九種力量</li>
+                <li>刻意練習：原創者全面解析，比天賦更關鍵的學習法</li>
+                <li>美國的反智傳統：宗教、民主、商業與教育如何形塑美國人對知識的態度？</li>
+                <li>Thinking, Fast and Slow</li>
+                <li>重新想像印度：亞洲下一個超級強國的潛力解碼</li>
+                <li>中東心臟：沙烏地阿拉伯的人民、宗教，歷史與未來</li>
+                <li>橫渡孟加拉灣：浪濤上流轉的移民與財富，南亞‧東南亞五百年史</li>
+                <li>能源大騙局：綠能神話引燃的世紀豪賭</li>
+                <li>基因：人類最親密的歷史</li>
+                <li>萬病之王：一部癌症的傳記，以及我們與它搏鬥的故事</li>
+                <li>你從哪裡來？一個字聽出你的故鄉─為什麼要懂語言學</li>
+                <li>漢字日本：日本人說的和你想的不一樣，學習不勉強的日文漢字豆知識</li>
+                <li>原則：生活和工作</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
 
 
 
