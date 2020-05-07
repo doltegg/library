@@ -46,10 +46,12 @@ h4 {
 .m-border{
   border-radius: 100%;
   border: 1px solid #088A29;
+  width: 14rem;  
 }
 .f-border{
   border-radius: 100%;
   border: 1px solid #f08;
+  width: 14rem;  
 }
 
 #dice {
