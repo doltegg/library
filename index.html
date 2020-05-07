@@ -117,7 +117,7 @@
           <p class="text-center member-name">egg</p>
         </div>
         <div class="col-lg-2 col-md-3 col-sm-4">
-          <img class="img-fluid f-border" src="img/f01.jpg">
+          <img class="img-fluid f-border" src="img/shenchi01.jpg">
           <p class="text-center member-name">楊慎淇</p>
         </div>
         <div class="col-lg-2 col-md-3 col-sm-4">
@@ -151,7 +151,7 @@
   <!-- 2.抽籤 -->
   <section id="dice" class="py-5">
     <div class="container">
-      <h3 class="text-center text-white">抽靈籤卜聖卦抽籤</h3>
+      <h3 class="text-center text-white">抽靈籤卜聖卦</h3>
       <h4 class="text-center text-white">遙遙天涯判死生，近近咫尺索命魂！</h4>
       <br>
       <!-- <div class="d-flex justify-content-center align-items-center"> -->
@@ -231,15 +231,25 @@
                     <!--重來-->
                   </button>
                 </div>
-                <!--
-                  <p class="py-2 mytext">草埔仔路上草青青，草埔仔路上啊草掛墘；
-                    有孝的媳婦是三餐燒，不孝的媳婦是過路搖啊過路搖，搖你著搖過橋喔~<br>
-                    獻紙來你嘛燒錢去啊，獻紙啊燒錢是要買路去啊！
-                    獻紙來你嘛燒錢去啊，獻紙啊燒錢是要買路去哦！
-                    行你就行，行到觀音佛祖廟，喔~<br>
-                    拜拜喔！來拜觀音菩薩喔！</p>
-                -->  
+                <!-- <div id="app">
+                  
+                  <img v-if="mcw" class="img-fluid f-border" src="img/mcw01.jpg" style="width: 100px">
+                  <img v-if="na" class="img-fluid f-border" src="img/na01.jpg" style="width: 100px">
+                  <img v-if="egg" class="img-fluid f-border" src="img/egg01.jpg" style="width: 100px">
+                  <img v-if="ben" class="img-fluid f-border" src="img/ben01.jpg" style="width: 100px">
+                  <img v-if="vivien" class="img-fluid f-border" src="img/vivien01.jpg" style="width: 100px">
+                  <img v-if="astrid" class="img-fluid f-border" src="img/astrid01.jpg" style="width: 100px">
+                  <img v-if="amal" class="img-fluid f-border" src="img/amal01.jpg" style="width: 100px">
+                  <img v-if="susan" class="img-fluid f-border" src="img/susan01.jpg" style="width: 100px">
+
+                </div> -->
               </div>
+
+
+              
+
+
+
             </div>
           </div>
         </div>
@@ -926,6 +936,9 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 
 
@@ -990,10 +1003,31 @@
           allData[spans[i].innerHTML] = 1;
         }
       }
+        // 試著寫
+          // var app = new Vue({
+          //   el: '#app',
+          //   data: {
+              
+          //     egg: lucky==="瑞宏",
+          //     amal: lucky==="筱婷",
+          //     vivien: lucky==="黃薇",
+          //     ben: lucky==="慎淇",
+          //     susan: lucky==="芝萱",
+          //     astrid: lucky==="宛霖",
+          //     mcw: false,
+          //     message: i,
+              
+          //   },
+            
+          // })
+        // 試著寫          
     }
     function GetRnd(min, max) {
       return parseInt(Math.random() * (max - min + 1));
     }
+
+      
+    
   </script>
 </body>
 
