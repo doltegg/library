@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="icon" type="image/png" href="img/favicon.ico" />	
+  <title>照片抽獎</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style>
+        *{
+            margin: 10px;
+        }
+        h1{
+            margin-bottom: 20px;
+            font-family: "Noto Sans TC";  
+        }
+        .s-pic{
+            border: dotted 1px gray; 
+            width: 120px; 
+            height: 120px;
+            border-radius: 60px;
+        }
+        .b-pic{
+            border: double;
+            width: 350px; 
+            height: 350px; 
+            position: absolute; 
+            left: 300px; 
+            top: 70px;
+        }
+        .startb, .stopb{
+            width: 100px; 
+            height: 50px; 
+            font-size: 22px; 
+            font-family: 'Noto Sans TC';            
+        }
+    </style>
+    
+</head>
+
+<body>
+    <h1>相片抽獎</h1>
+    <!-- 小相框 -->
+    <div><!--style="border-style: dotted; width: 120px; height: 120px;">--> 
+        <img id="img1ID" src="img/f01.jpg" class="s-pic">
+    </div>
+
+    <!-- 大相框 -->
+    <div><!--style="border-style: double; width: 500px; height: 500px; position: absolute; left: 500px; top: 10px">-->
+        <img id="img2ID" src="img/f01.jpg" class="b-pic">
+    </div>
+
+    <!-- 開始按鈕 -->
+    <input id="startID" type="button" value="開始" class="startb">
+
+    <!-- 停止按鈕 -->
+    <input id="stopID" type="button" value="停止" class="stopb">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script><!-- 芷儀, 瑞宏, 慎淇, 芝萱, 筱婷, 智超, 昱宏, 宛霖, 黃薇, -->
+        var imgs=["img/ben01.jpg",
+                  "img/na01.jpg",
+                  "img/egg01.jpg",
+                  "img/shenchi01.jpg",
+                  "img/susan01.jpg",
+                  "img/amal01.jpg",
+                  "img/mcw01.jpg",
+                  "img/yulin01.jpg",
+                  "img/astrid01.jpg",
+                  "img/vivien01.jpg"
+                  ];
+        var stratId;
+        var index;
+        $(function () {
+            //按鈕鎖定灰白可否使用
+            $("#startID").prop("disabled",false);
+            $("#stopID").prop("disabled",true);
+
+            //開始鍵綁定
+            $("#startID").click(function(){
+                //循環定時器，50 毫秒執行一次
+                startId=setInterval(function () {
+                    //按鈕鎖定灰白可否使用
+                    $("#startID").prop("disabled",true);
+                    $("#stopID").prop("disabled",false);
+
+                    //生成隨機數
+                    index = Math.floor(Math.random()* 10);
+                    $("#img1ID").prop("src",imgs[index]);
+                },50);
+            });
+
+            //結束鍵綁定
+            $("#stopID").click(function () {
+                //按鈕鎖定灰白可否使用
+                $("#startID").prop("disabled",false);
+                $("#stopID").prop("disabled",true);
+
+                //停止定時器
+                clearInterval(startId);
+                $("#img2ID").prop("src",imgs[index]).hide();
+                //1 秒後顯示中獎照片
+                $("#img2ID").show(1000);
+            });
+        });
+    </script>
+
+
+</body>   
+</html>
