@@ -202,11 +202,11 @@
               <div class="card-body">
                 <h5 class="card-title text-white">天理昭彰，報應不爽</h5>
                 <p class="text-white p-mar">
-                  春蠶到死絲方盡，蠟炬成灰淚始乾。<br>
-                  人生自古誰無死，留取丹心照汗青。<br>
+                  <!-- 春蠶到死絲方盡，蠟炬成灰淚始乾。<br>
+                  人生自古誰無死，留取丹心照汗青。<br> -->
                   舉頭三尺有神明，善惡到頭終有報。<br>
-                  小人得志，天網恢恢。<br>
-                  君子道消，疏而不漏。<br>
+                  <!-- 小人得志，天網恢恢。<br>
+                  君子道消，疏而不漏。<br> -->
                   心無罣礙，無罣礙故，無有恐怖，遠離顛倒夢想，究竟涅槃。
                 </p>
                 <form class="result input-group mb-3" style="margin-top: 15px;">
@@ -231,18 +231,21 @@
                     <!--重來-->
                   </button>
                 </div>
-                <!-- <div id="app">
-                  
-                  <img v-if="mcw" class="img-fluid f-border" src="img/mcw01.jpg" style="width: 100px">
-                  <img v-if="na" class="img-fluid f-border" src="img/na01.jpg" style="width: 100px">
+                <div id="app" class="text-center pt-4">
+                  <!-- {{y}}{{yy}} <br>
+                  {{x}}{{xx}} <br>  -->
+                  <img :src="yy" style="width: 150px;" class="rounded-circle">
+                  <!-- <img :src="xx" style="width: 100px;"> -->
+                  <!-- <img v-if="mcw" class="img-fluid f-border" src="img/mcw01.jpg" style="width: 100px">
+                  <img v-if="na"  src="img/na01.jpg" style="width: 100px">
                   <img v-if="egg" class="img-fluid f-border" src="img/egg01.jpg" style="width: 100px">
                   <img v-if="ben" class="img-fluid f-border" src="img/ben01.jpg" style="width: 100px">
                   <img v-if="vivien" class="img-fluid f-border" src="img/vivien01.jpg" style="width: 100px">
                   <img v-if="astrid" class="img-fluid f-border" src="img/astrid01.jpg" style="width: 100px">
                   <img v-if="amal" class="img-fluid f-border" src="img/amal01.jpg" style="width: 100px">
-                  <img v-if="susan" class="img-fluid f-border" src="img/susan01.jpg" style="width: 100px">
+                  <img v-if="susan" class="img-fluid f-border" src="img/susan01.jpg" style="width: 100px"> -->
 
-                </div> -->
+                </div>
               </div>
 
 
@@ -311,7 +314,7 @@
                     </tr>
                     <tr>
                       <td scope="row">慎淇</td>
-                      <td style="color: orange;">5/7</td>
+                      <td style="color: orange;">5/14</td>
                       <td>2/27</td>
                       <td>11/21</td>
                       <td>10/17</td>
@@ -935,8 +938,7 @@
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"></script>
-  
+    crossorigin="anonymous"></script>  
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
@@ -1003,24 +1005,64 @@
           allData[spans[i].innerHTML] = 1;
         }
       }
-        // 試著寫
-          // var app = new Vue({
-          //   el: '#app',
-          //   data: {
-              
-          //     egg: lucky==="瑞宏",
-          //     amal: lucky==="筱婷",
-          //     vivien: lucky==="黃薇",
-          //     ben: lucky==="慎淇",
-          //     susan: lucky==="芝萱",
-          //     astrid: lucky==="宛霖",
-          //     mcw: false,
-          //     message: i,
-              
-          //   },
-            
-          // })
-        // 試著寫          
+          // 試著寫<!-- 芷儀, 瑞宏, 慎淇, 芝萱, 筱婷, 智超, 昱宏, 宛霖, 黃薇, -->
+            var app = new Vue({
+              el: '#app',
+              data: {
+                y: lucky,
+                // x: '',
+                // xx: "img/" + x + "01.jpg"
+              },
+              computed: {
+                yy: function () {
+                  if(this.y==="芷儀"){
+                    return "img/na01.jpg"
+                  }else if(this.y==="瑞宏"){
+                    return "img/egg01.jpg"
+                  }else if(this.y==="慎淇"){
+                    return "img/shenchi01.jpg"
+                  }else if(this.y==="芝萱"){
+                    return "img/susan01.jpg"
+                  }else if(this.y==="筱婷"){
+                    return "img/amal01.jpg"
+                  }else if(this.y==="智超"){
+                    return "img/mcw01.jpg"
+                  }else if(this.y==="昱宏"){
+                    return "img/yulin01.jpg"
+                  }else if(this.y==="宛霖"){
+                    return "img/astrid01.jpg"
+                  }else if(this.y==="黃薇"){
+                    return "img/vivien01.jpg"
+                  }else {
+                    return "img/f01.jpg"
+                  }	
+                },
+                // x: function () {
+                //   if(this.y==="芷儀"){
+                //     return "na"
+                //   }else if(this.y==="瑞宏"){
+                //     return "egg"
+                //   }else if(this.y==="慎淇"){
+                //     return "shenchi"
+                //   }else if(this.y==="芝萱"){
+                //     return "susam"
+                //   }else if(this.y==="筱婷"){
+                //     return "amal"
+                //   }else if(this.y==="智超"){
+                //     return "mcw"
+                //   }else if(this.y==="昱宏"){
+                //     return "yulin"
+                //   }else if(this.y==="宛霖"){
+                //     return "astrid"
+                //   }else if(this.y==="黃薇"){
+                //     return "vivien"
+                //   }else {
+                //     return "f"
+                //   }
+                // }
+            },   
+          })
+          // 試著寫          
     }
     function GetRnd(min, max) {
       return parseInt(Math.random() * (max - min + 1));
