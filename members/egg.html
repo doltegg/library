@@ -1,0 +1,1681 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="icon" type="image/png" href="img/favicon.ico" />	
+  <title>egg</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  
+  <style>
+  *,h1,h2,h3,h4,h5 {
+    font-family: 'Raleway','Noto Sans TC', 微軟正黑體,  sans-serif;
+  }
+  h1 {
+    font-family: 'Noto Sans TC';
+    font-size: 6rem;
+    font-weight: 900;
+  }
+  /*h1{
+    color:#f4a;
+  }*/
+  h2 {
+     font-weight: 900;
+  }
+  h3 {
+    font-weight: 700;
+  }
+  h4 {
+    font-weight: 500;
+  }
+  .header {
+    height: 100vh;
+    background-image: url(img/eggplant.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+  }
+  li{
+    line-height: 1.9;
+    margin-left: -.5rem
+  }
+  table.bottomBorder{ 
+    border-collapse: collapse; 
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+  }
+  table.bottomBorder tfoot{ 
+    border-top: 1px solid; 
+  }
+  table.bottomBorder td{ 
+    padding: 3px 8px; 
+    border: 0px; 
+    text-align: center;
+    line-height: 1.1;
+    font-size: 1rem;
+  }
+  table.bottomBorder th{ 
+    border-bottom: 1px dashed; 
+    padding: 2px 8px; 
+    text-align: center;
+    vertical-align: middle;
+    font-size: .9rem;
+  }
+  .timeline-section{
+    position: relative;
+  }
+  .timeline-section:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom:0;
+    left: 50%;
+    width: 3px;
+    transform: translateX(-50%);
+    background-color: #ccc;
+  }
+  .timeline-pointer{
+    position: relative;
+  }
+  .timeline-pointer:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    border: 3px solid #777;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    z-index: 1;
+  }
+  @media(max-width: 576px){
+    .timeline-section:after,
+    .timeline-pointer:after{
+      display: none;
+    }
+  }
+  </style>
+</head>
+
+<body>
+  <!-- 標題 -->
+  <header class="header d-flex justify-content-center align-items-center">
+    <div class="text-center">
+      <h1 class="text-primary">許瑞宏</h1>
+      <h2 class="text-info">egg</h2>
+    </div>
+  </header>
+
+  <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: rgba(0,0,0,.9);">
+    <a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="../index.html">首頁</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html#/dice">抽籤</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html#/collection">館藏</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html#/outprint">絕版品</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            成員
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">呂錦棠</a>
+            <a class="dropdown-item" href="#">曾芷儀</a>
+            <a class="dropdown-item" href="#">許瑞宏</a>
+            <a class="dropdown-item" href="#">楊慎淇</a>
+            <a class="dropdown-item" href="#">洪筱婷</a>
+            <a class="dropdown-item" href="#">林芝萱</a>
+            <a class="dropdown-item" href="#">林昱宏</a>
+            <a class="dropdown-item" href="#">詹宛霖</a>
+            <a class="dropdown-item" href="#">黃薇</a>
+            <a class="dropdown-item" href="#">許智超</a>
+            <div class="dropdown-divider"></div>
+          </div>
+        </li>
+      </ul>  
+    </div>
+  </nav>
+
+  
+  <!--內文開始-->
+  <section class="py-5">
+    <h2 class="text-dark text-center">抽籤當選者</h2>
+    <div class="container">
+      <div class="timeline-section">
+        <!--第 x 本-->
+        <div class="row my-5 timeline-pointer">
+          <div class="col-sm-6">
+            <h4><i class="far fa-calendar-alt"></i> 2020/9/10</h4>
+            <div class="row">
+              <div class="col-9">                
+                <ul>
+                  <li>書名：萬病之王</li>
+                  <li>作者：辛達塔‧穆克吉</li>
+                  <li>一部癌症的傳記，以及我們與它搏鬥的故事</li>
+                </ul>
+              </div>  
+              <div class="col-3 align-self-end">
+                <p><a target="_blank" href="https://doltegg.github.io/egg/others/egg/2020/cancer.pdf" title="notes">
+                    <i class="fa fa-file-pdf fa-3x text-secondary"></i>
+                  </a>
+                  <a target="_blank" href="https://doltegg.github.io/egg/others/egg/2020/cancer.html" title="slides">
+                    <i class="fas fa-file-code fa-3x text-secondary"></i>
+                  </a>
+                </p>
+              </div>
+            </div>  
+          </div>
+          <div class="col-sm-6">
+            <img src="https://doltegg.github.io/book/images/biographycancer.jpg" width="180px" class="border border-1" alt="">
+          </div>
+        </div>
+        <!--第 x+1 本-->
+        <div class="row my-5 timeline-pointer flex-sm-row-reverse">
+          <div class="col-sm-6">
+            <h4><i class="far fa-calendar-alt"></i> 2020/6/18</h4>
+            <div class="row">
+              <div class="col-9">                
+                <ul>
+                  <li>書名：CSS 大全</li>
+                  <li>作者：Eric A. Meyer & Estelle Weyl</li>
+                  <li>Eric Meyer 與 Estelle Weyl 藉由本書介紹如何改善使用者體驗、提高開發速度、避免潛在問題及透過佈局 (layout) 增加應用程式的生命與深度，以及動畫效果、邊框、背景、文字屬性與其他工具和技巧。</li>
+                </ul>
+              </div>  
+              <div class="col-3 align-self-end">
+                <p><a target="_blank" href="https://doltegg.github.io/egg/others/egg/2020/css.pdf" title="notes">
+                    <i class="fa fa-file-pdf fa-3x text-secondary"></i>
+                  </a>
+                  <a target="_blank" href="https://doltegg.github.io/egg/others/egg/2020/typecss.html" title="slides">
+                    <i class="fas fa-file-code fa-3x text-secondary"></i>
+                  </a>
+                </p>
+              </div>
+            </div>  
+          </div>
+          <div class="col-sm-6 text-right">
+            <img src="https://doltegg.github.io/egg/others/egg/2020/css.png" width="180px" class="border border-1" alt="">
+          </div>
+        </div>
+        <!--第 x 本-->
+        <div class="row my-5 timeline-pointer">
+          <div class="col-sm-6">
+            <h4><i class="far fa-calendar-alt"></i> 2020/4/16</h4>
+            <div class="row">
+              <div class="col-9">                
+                <ul>
+                  <li>書名：童話裡隱藏的世界史</li>
+                  <li>作者：朴信英</li>
+                  <li>通往世界史最精采絕倫的路！為什麼童話裡的白馬王子總愛到處亂晃？其實，他們是在尋找長期飯票！</li>
+                </ul>
+              </div>  
+              <div class="col-3 align-self-end">
+                <p><a target="_blank" href="https://doltegg.github.io/egg/others/egg/2019/princeeverywhere.pdf" title="notes">
+                    <i class="fa fa-file-pdf fa-3x text-secondary"></i>
+                  </a>
+                  <a target="_blank" href="https://doltegg.github.io/egg/others/egg/2020/legend.html" title="slides">
+                    <i class="fas fa-file-code fa-3x text-secondary"></i>
+                  </a>
+                </p>
+              </div>
+            </div>  
+          </div>
+          <div class="col-sm-6">
+            <img src="https://doltegg.github.io/book/images/princeeverywhere.jpg" width="180px" class="border border-1" alt="">
+          </div>
+        </div>
+        <!--第 x+1 本-->
+        <div class="row my-5 timeline-pointer flex-sm-row-reverse">
+          <div class="col-sm-6">
+            <h4><i class="far fa-calendar-alt"></i> 2019/11/7</h4>
+            <div class="row">
+              <div class="col-9">                
+                <ul>
+                  <li>書名：不當行為</li>
+                  <li>作者：理查．賽勒</li>
+                  <li>2017 年諾貝爾經濟學獎得主，行為經濟學之父，理查‧塞勒半自傳性代表作！</li>
+                </ul>
+              </div>  
+              <div class="col-3 align-self-end">
+                <p><a target="_blank" href="https://doltegg.github.io/egg/others/egg/2019/misbehaving.pdf" title="notes">
+                    <i class="fa fa-file-pdf fa-3x text-secondary"></i>
+                  </a>
+                  <a target="_blank" href="https://doltegg.github.io/egg/others/egg/2019/misbehaving.html" title="slides">
+                    <i class="fas fa-file-code fa-3x text-secondary"></i>
+                  </a>
+                </p>
+              </div>
+            </div>  
+          </div>
+          <div class="col-sm-6 text-right">
+            <img src="https://doltegg.github.io/book/images/misbehaving.jpg" width="180px" class="border border-1" alt="">
+          </div>
+        </div>
+        <!--第 x 本-->
+        <div class="row my-5 timeline-pointer">
+          <div class="col-sm-6">
+            <h4><i class="far fa-calendar-alt"></i> 2019/9/12</h4>
+            <div class="row">
+              <div class="col-9">                
+                <ul>
+                  <li>書名：故事 2：99% 有效的故事行銷，創造品牌力</li>
+                  <li>作者：許榮哲</li>
+                  <li>好的故事可以行銷品牌、創造價值、打中對方的心。對方是誰？他們是你的顧客、讀者、戀人，甚至是國王。開始說故事吧，讓每個驕傲的國王，為你而低頭！</li>
+                </ul>
+              </div>  
+              <div class="col-3 align-self-end">
+                <p><a target="_blank" href="https://doltegg.github.io/egg/others/egg/2019/brand.pdf" title="notes">
+                    <i class="fa fa-file-pdf fa-3x text-secondary"></i>
+                  </a>
+                  <a target="_blank" href="https://doltegg.github.io/egg/others/egg/brand.html" title="slides">
+                    <i class="fas fa-file-code fa-3x text-secondary"></i>
+                  </a>
+                </p>
+              </div>
+            </div>  
+          </div>
+          <div class="col-sm-6">
+            <img src="https://doltegg.github.io/blog/assets/images/2019/brand.jpg" width="180px" class="border border-1" alt="">
+          </div>
+        </div>
+        <!--第 x+1 本-->
+        <div class="row my-5 timeline-pointer flex-sm-row-reverse">
+          <div class="col-sm-6">
+            <h4><i class="far fa-calendar-alt"></i> 2019/6/6</h4>
+            <div class="row">
+              <div class="col-9">                
+                <ul>
+                  <li>書名：餘震</li>
+                  <li>作者：張翎</li>
+                  <li>本書收錄四則中篇小說：〈餘震〉、〈阿喜上學〉、〈向北方〉、〈花事了〉。〈餘震〉為馮小剛導演、電影《唐山大地震》原著小說。1976 年 7 月唐山發生大地震，二、三十萬人傷亡，數千家庭破碎。</li>
+                </ul>
+              </div>  
+              <div class="col-3 align-self-end">
+                <p><a target="_blank" href="https://doltegg.github.io/egg/others/egg/2019/earthquake.pdf" title="notes">
+                    <i class="fa fa-file-pdf fa-3x text-secondary"></i>
+                  </a>
+                  <a target="_blank" href="https://doltegg.github.io/egg/library.html#/earthquake" title="slides">
+                    <i class="fas fa-file-code fa-3x text-secondary"></i>
+                  </a>
+                </p>
+              </div>
+            </div>  
+          </div>
+          <div class="col-sm-6 text-right">
+            <img src="https://doltegg.github.io/blog/assets/images/2019/earthquake.jpg" width="180px" class="border border-1" alt="">
+          </div>
+        </div>
+        <!--第 x 本-->
+        <div class="row my-5 timeline-pointer">
+          <div class="col-sm-6">
+            <h4><i class="far fa-calendar-alt"></i> 2019/4/18</h4>
+            <div class="row">
+              <div class="col-9">                
+                <ul>
+                  <li>書名：
+                    <ul>
+                      <li>小說課 I ─ 折磨讀者的祕密</li>
+                      <li>小說課 II ─ 偷故事的人</li>
+                      <li>小說課 III ─ 偷電影的故事賊</li>
+                    </ul>
+                  </li>
+                  <li>作者：許榮哲</li>
+                  <li>被譽為臺灣七○後最會說故事的人，曾入選「二十位四十歲以下最受期待的華文小說家」，臺灣知名導演九把刀的啟蒙偶像。代表作《小說課》在兩岸大賣十幾萬冊，掀起故事的狂潮，被大陸最火自媒體「羅輯思維」盛讚為「最適合中國人的故事入門教練」。</li>
+                </ul>
+              </div>  
+              <div class="col-3 align-self-end">
+                <p><a target="_blank" href="https://doltegg.github.io/egg/others/egg/2019//novel1.pdf" title="notes">
+                    <i class="fa fa-file-pdf fa-3x text-secondary"></i>
+                  </a>
+                  <a target="_blank" href="https://doltegg.github.io/egg/others/egg/2019//novel2.pdf" title="notes">
+                    <i class="fa fa-file-pdf fa-3x text-secondary"></i>
+                  </a>
+                  <a target="_blank" href="https://doltegg.github.io/egg/others/egg/2019//novel3.pdf" title="notes">
+                    <i class="fa fa-file-pdf fa-3x text-secondary"></i>
+                  </a>
+                  <a target="_blank" href="https://doltegg.github.io/egg/library.html#/noveli" title="slides">
+                    <i class="fas fa-file-code fa-3x text-secondary"></i>
+                  </a>
+                </p>
+              </div>
+            </div>  
+          </div>
+          <div class="col-sm-6">
+            <img src="https://doltegg.github.io/egg/others/egg/noveli.jpg" width="170px" class="border border-1" alt="">
+            <img src="https://doltegg.github.io/egg/others/egg/novelii.jpg" width="170px" class="border border-1" alt="">
+            <img src="https://doltegg.github.io/egg/others/egg/noveliii.jpg" width="170px" class="border border-1" alt="">
+          </div>
+        </div>
+        <!--第 x+1 本-->
+        <div class="row my-5 timeline-pointer flex-sm-row-reverse">
+          <div class="col-sm-6">
+            <h4><i class="far fa-calendar-alt"></i> 2019/1/31</h4>
+            <div class="row">
+              <div class="col-9">                
+                <ul>
+                  <li>書名：深夜小狗神祕習題</li>
+                  <li>作者：馬克．海登</li>
+                  <li>看起來像是一本涉及謀殺案的偵探小說，但是偵探、兇手、受害者、真相，以及所有的一切都出乎人意料之外……本書採用對比的故事軸線鋪陳出強烈的張力，在找出殺狗兇手的過程之中，實際上揭開一個自閉症數學天才少年的內心世界。</li>
+                </ul>
+              </div>  
+              <div class="col-3 align-self-end">
+                <p><a target="_blank" href="https://doltegg.github.io/egg/others/egg/dog.pdf" title="notes">
+                    <i class="fa fa-file-pdf fa-3x text-secondary"></i>
+                  </a>
+                  <a target="_blank" href="https://doltegg.github.io/egg/library.html#/dog" title="slides">
+                    <i class="fas fa-file-code fa-3x text-secondary"></i>
+                  </a>
+                </p>
+              </div>
+            </div>  
+          </div>
+          <div class="col-sm-6 text-right">
+            <img src="https://doltegg.github.io/egg/others/egg/dog.png" width="180px" class="border border-1" alt="">
+          </div>
+        </div>
+        <!--第 x 本-->
+        <div class="row my-5 timeline-pointer">
+          <div class="col-sm-6">
+            <h4><i class="far fa-calendar-alt"></i> 2019/1/10</h4>
+            <div class="row">
+              <div class="col-9">                
+                <ul>
+                  <li>書名：了解「人」，你才知道怎麼設計！</li>
+                  <li>作者：Susan M. Weinschenk</li>
+                  <li>談到心理學和腦科學，你可能會覺得很艱深，不用怕！Susan 將用淺顯易懂又有趣的文筆，告訴你 100 個簡單又實用的建議，讓你洞察人們行為背後的真實心理，創造出能引起共鳴、充滿吸引力的設計作品。</li>
+                </ul>
+              </div>  
+              <div class="col-3 align-self-end">
+                <p><a target="_blank" href="https://doltegg.github.io/egg/others/egg/design.ppsx" title="notes">
+                    <i class="fa fa-file-powerpoint fa-3x text-secondary"></i>
+                  </a>
+                  <a target="_blank" href="https://doltegg.github.io/egg/library.html#/design" title="slides">
+                    <i class="fas fa-file-code fa-3x text-secondary"></i>
+                  </a>
+                </p>
+              </div>
+            </div>  
+          </div>
+          <div class="col-sm-6">
+            <img src="https://doltegg.github.io/egg/others/egg/design1.jpg" width="180px" class="border border-1" alt="">
+          </div>
+        </div>
+        <!--第 x+1 本-->
+        <div class="row my-5 timeline-pointer flex-sm-row-reverse">
+          <div class="col-sm-6">
+            <h4><i class="far fa-calendar-alt"></i> 2018/10/18</h4>
+            <div class="row">
+              <div class="col-9">                
+                <ul>
+                  <li>書名：因為愛，我們呼吸</li>
+                  <li>作者：莉莎．潔諾娃</li>
+                  <li>亨丁頓舞蹈症（英語：Huntington's disease，縮寫：HD），是一種遺傳性神經退化性疾病，發病時間大部分是35歲左右，一但發病到死亡大約剩10年的生命。</li>
+                </ul>
+              </div>  
+              <div class="col-3 align-self-end">
+                <p><a target="_blank" href="https://doltegg.github.io/egg/others/egg/obriens.pdf" title="notes">
+                    <i class="fa fa-file-pdf fa-3x text-secondary"></i>
+                  </a>
+                  <a target="_blank" href="https://doltegg.github.io/egg/library.html#/obriens" title="slides">
+                    <i class="fas fa-file-code fa-3x text-secondary"></i>
+                  </a>
+                </p>
+              </div>
+            </div>  
+          </div>
+          <div class="col-sm-6 text-right">
+            <img src="https://doltegg.github.io/egg/others/egg/obriens.jpg" width="180px" class="border border-1" alt="">
+          </div>
+        </div>
+        <!--第 x 本-->
+        <div class="row my-5 timeline-pointer">
+          <div class="col-sm-6">
+            <h4><i class="far fa-calendar-alt"></i> 2018/10/4</h4>
+            <div class="row">
+              <div class="col-9">                
+                <ul>
+                  <li>書名：基因</li>
+                  <li>作者：辛達塔．穆克吉</li>
+                  <li>破解基因，是人類最偉大的冒險，還是最危險的浩劫？當人類取代上帝，打造完美基因、根除致命因子，《X 戰警》、《惡靈古堡》的時代已經來臨！</li>
+                </ul>
+              </div>  
+              <div class="col-3 align-self-end">
+                <p><a target="_blank" href="https://doltegg.github.io/egg/others/egg/gene.pdf" title="notes">
+                    <i class="fa fa-file-pdf fa-3x text-secondary"></i>
+                  </a>
+                  <a target="_blank" href="https://doltegg.github.io/egg/library.html#/gene" title="slides">
+                    <i class="fas fa-file-code fa-3x text-secondary"></i>
+                  </a>
+                </p>
+              </div>
+            </div>  
+          </div>
+          <div class="col-sm-6">
+            <img src="https://doltegg.github.io/egg/others/egg/gene.jpg" width="180px" class="border border-1" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+  <section class="py-5" style="background-image: linear-gradient(to bottom,rgba(255,255,137,.9), rgba(255,255,137,.1) 70%), linear-gradient(to right, rgb(251,196,31,.9), rgb(251,196,31,.1) 70%);">
+    <div class="container">
+      <h3 class="text-center">神選者</h3>
+      <div class="row py-5">
+        <div class="col-md-6">
+          <h5 class="text-center"><i class="far fa-calendar-alt"></i> 2020 年</h5>
+          <ul>
+            
+          </ul>
+        </div>
+        <!-- 2019 年 -->
+        <div class="col-md-6">
+          <h5 class="text-center text-secondary"><i class="far fa-calendar-alt"></i> 2019 年</h5>
+          <ul class="text-secondary">
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+<!--
+  <section class="py-5">
+    <div class="container">
+      <h3 class="text-center">電子金融績效</h3>
+      <h4 class="text-center py-3 mt-3">網站會員</h4>
+      <div class="d-flex flex-md-row justify-content-around flex-wrap" style="margin-bottom: -10px;">
+
+        <div>
+          <h6 class="text-center">國泰世華 (數位平台)</h6>
+          <p class="text-center text-secondary" style="margin: -1px 0px;font-size: 0.8rem;">單位：千</p>
+            <div class="table-responsive-md">
+              <table class="tabel table-hover bottomBorder text-right" style="margin-bottom: 22px;">
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">No.</th>
+                    <th scope="col">MAU</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jan-19</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Feb-19</td>
+                    <td>4,020</td>
+                    <td>1,160</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Mar-19</td>
+                    <td>4,061</td>
+                    <td>1,224</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Apr-19</td>
+                    <td>4,097</td>
+                    <td>1,228</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">May-19</td>
+                    <td>4,132</td>
+                    <td>1,265</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jun-19</td>
+                    <td>4,166</td>
+                    <td>1,256</td> 	 
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jul-19</td>
+                    <td>4,209</td>	  	 
+                    <td>1,317</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Aug-19</td>
+                    <td>4,258</td>	  	  
+                    <td>1,356</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Sep-19</td>
+                    <td>4,312</td>	  	  
+                    <td>1,374</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Oct-19</td>
+                    <td>4,374</td>	  	 
+                    <td>1,442</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Nov-19</td>
+                    <td>4,433</td>	  	  
+                    <td>1,455</td>
+                  </tr>
+                  <tr class="bg-warning">
+                    <td scope="row" class="text-nowrap">Dec-19</td>
+                    <td>4,494</td>	  	 
+                    <td>1,503</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jan-20</td>
+                    <td>4,545</td>
+                    <td>1,508</td>	  	 
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Feb-20</td>
+                    <td>4,614</td>
+                    <td>1,554</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Mar-20</td>
+                    <td>4,685</td>
+                    <td>1,646</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Apr-20</td>
+                    <td>4,750</td>
+                    <td>1,658</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">May-20</td>
+                    <td>4,816</td>
+                    <td>1,710</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jun-20</td>
+                    <td>4,886</td>
+                    <td>1,760</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jul-20</td>
+                    <td>4,958</td>
+                    <td>1,832</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+
+        <div>
+          <h6 class="text-center">國泰人壽 (MyInsurance)</h6>
+          <p class="text-center text-secondary" style="margin: -1px 0px;font-size: 0.8rem;">單位：千</p>
+            <div class="table-responsive-md">
+              <table class="tabel table-hover bottomBorder text-right" style="margin-bottom: 22px;">
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">No.</th>
+                    <th scope="col">MAU</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jan-19</td>
+                    <td>1,995</td>
+                    <td>75</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Feb-19</td>
+                    <td>2,013</td>
+                    <td>65</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Mar-19</td>
+                    <td>2,042</td>
+                    <td>91</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Apr-19</td>
+                    <td>2,075</td>
+                    <td>87</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">May-19</td>
+                    <td>2,098</td>
+                    <td>93</td>
+                  </tr> 	  
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jun-19</td>
+                    <td>2,130</td>
+                    <td>74</td> 	 
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jul-19</td>
+                    <td>2,164</td>	  	 
+                    <td>79</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Aug-19</td>
+                    <td>2,190</td>	  	  
+                    <td>78</td>
+                  </tr> 
+                  <tr>
+                    <td scope="row" class="text-nowrap">Sep-19</td>
+                    <td>2,219</td>	  	  
+                    <td>78</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Oct-19</td>
+                    <td>2,250</td>	  	 
+                    <td>81</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Nov-19</td>
+                    <td>2,280</td>	  	  
+                    <td>85</td>
+                  </tr>
+                  <tr class="bg-warning">
+                    <td scope="row" class="text-nowrap">Dec-19</td>
+                    <td>2,315</td>	  	 
+                    <td>96</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jan-20</td>
+                    <td>2,340</td>
+                    <td>78</td>	  	 
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Feb-20</td>
+                    <td>2,364</td>
+                    <td>88</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Mar-20</td>
+                    <td>2,394</td>
+                    <td>106</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Apr-20</td>
+                    <td>2,425</td>
+                    <td>107</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">May-20</td>
+                    <td>2,448</td>
+                    <td>96</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jun-20</td>
+                    <td>2,473</td>
+                    <td>90</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jul-20</td>
+                    <td>2,499</td>
+                    <td>90</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+
+        <div>
+          <h6 class="text-center">國泰產險</h6>
+          <p class="text-center text-secondary" style="margin: -1px 0px;font-size: 0.8rem;">單位：千</p>
+            <div class="table-responsive-md">
+              <table class="tabel table-hover bottomBorder text-right" style="margin-bottom: 22px;">
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">No.</th>
+                    <th scope="col">MAU</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jan-19</td>
+                    <td>428</td>
+                    <td>41</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Feb-19</td>
+                    <td>442</td>
+                    <td>38</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Mar-19</td>
+                    <td>463</td>
+                    <td>48</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Apr-19</td>
+                    <td>480</td>
+                    <td>43</td>
+                  </tr> 	 
+                  <tr>
+                    <td scope="row" class="text-nowrap">May-19</td>
+                    <td>503</td>
+                    <td>55</td>
+                  </tr> 	  
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jun-19</td>
+                    <td>524</td>
+                    <td>52</td> 	 
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jul-19</td>
+                    <td>545</td>	  	 
+                    <td>54</td>
+                  </tr> 	  
+                  <tr>
+                    <td scope="row" class="text-nowrap">Aug-19</td>
+                    <td>571</td>	  	  
+                    <td>58</td>
+                  </tr> 
+                  <tr>
+                    <td scope="row" class="text-nowrap">Sep-19</td>
+                    <td>597</td>	  	  
+                    <td>66</td>
+                  </tr> 	  
+                 	<tr>
+                    <td scope="row" class="text-nowrap">Oct-19</td>
+                    <td>624</td>	  	 
+                    <td>70</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Nov-19</td>
+                    <td>647</td>	  	  
+                    <td>55</td>
+                  </tr>
+                  <tr class="bg-warning">
+                    <td scope="row" class="text-nowrap">Dec-19</td>
+                    <td>667</td>	  	 
+                    <td>57</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jan-20</td>
+                    <td>686</td>
+                    <td>58</td>	  	 
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Feb-20</td>
+                    <td>708</td>
+                    <td>62</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Mar-20</td>
+                    <td>720</td>
+                    <td>44</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Apr-20</td>
+                    <td>731</td>
+                    <td>36</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">May-20</td>
+                    <td>742</td>
+                    <td>40</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jun-20</td>
+                    <td>753</td>
+                    <td>42</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jul-20</td>
+                    <td>765</td>
+                    <td>46</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+
+        <div>
+          <h6 class="text-center">國泰證券</h6>
+          <p class="text-center text-secondary" style="margin: -1px 0px;font-size: 0.8rem;">單位：千</p>
+            <div class="table-responsive-md">
+              <table class="tabel table-hover bottomBorder text-right" style="margin-bottom: 22px;">
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">No.</th>
+                    <th scope="col">MAU</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jan-19</td>
+                    <td>289</td>
+                    <td>15</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Feb-19</td>
+                    <td>294</td>
+                    <td>15</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Mar-19</td>
+                    <td>305</td>
+                    <td>17</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Apr-19</td>
+                    <td>318</td>
+                    <td>17</td>
+                  </tr> 	 
+                  <tr>
+                    <td scope="row" class="text-nowrap">May-19</td>
+                    <td>331</td>
+                    <td>17</td>
+                  </tr> 
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jun-19</td>
+                    <td>339</td>
+                    <td>15</td> 	 
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jul-19</td>
+                    <td>353</td>	  	 
+                    <td>16</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Aug-19</td>
+                    <td>367</td>	  	  
+                    <td>17</td>
+                  </tr> 
+                  <tr>
+                    <td scope="row" class="text-nowrap">Sep-19</td>
+                    <td>383</td>	  	  
+                    <td>17</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Oct-19</td>
+                    <td>406</td>	  	 
+                    <td>18</td>
+                  </tr>
+                 <tr>
+                    <td scope="row" class="text-nowrap">Nov-19</td>
+                    <td>426</td>	  	  
+                    <td>18</td>
+                  </tr>
+                  <tr class="bg-warning">
+                    <td scope="row" class="text-nowrap">Dec-19</td>
+                    <td>442</td>	  	 
+                    <td>19</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jan-20</td>
+                    <td>455</td>
+                    <td>17</td>	  	 
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Feb-20</td>
+                    <td>487</td>
+                    <td>19</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Mar-20</td>
+                    <td>530</td>
+                    <td>24</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Apr-20</td>
+                    <td>554</td>
+                    <td>22</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">May-20</td>
+                    <td>576</td>
+                    <td>24</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jun-20</td>
+                    <td>599</td>
+                    <td>24</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jul-20</td>
+                    <td>627</td>
+                    <td>27</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+
+        <div>
+          <h6 class="text-center">國泰投信</h6>
+          <p class="text-center text-secondary" style="margin: -1px 0px;font-size: 0.8rem;">單位：千</p>
+            <div class="table-responsive-md">
+              <table class="tabel table-hover bottomBorder text-right" style="margin-bottom: 22px;">
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">No.</th>
+                    <th scope="col">MAU</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jan-19</td>
+                    <td>82</td>
+                    <td>14</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Feb-19</td>
+                    <td>82</td>
+                    <td>14</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Mar-19</td>
+                    <td>82</td>
+                    <td>16</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Apr-19</td>
+                    <td>82</td>
+                    <td>17</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">May-19</td>
+                    <td>82</td>
+                    <td>15</td>
+                  </tr> 
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jun-19</td>
+                    <td>82</td>
+                    <td>14</td> 	 
+                  </tr> 
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jul-19</td>
+                    <td>83</td>	  	 
+                    <td>17</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Aug-19</td>
+                    <td>83</td>	  	  
+                    <td>16</td>
+                  </tr> 
+                  <tr>
+                    <td scope="row" class="text-nowrap">Sep-19</td>
+                    <td>83</td>	  	  
+                    <td>17</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Oct-19</td>
+                    <td>84</td>	  	 
+                    <td>17</td>
+                  </tr>
+                 <tr>
+                    <td scope="row" class="text-nowrap">Nov-19</td>
+                    <td>89</td>	  	  
+                    <td>17</td>
+                  </tr>
+                  <tr class="bg-warning">
+                    <td scope="row" class="text-nowrap">Dec-19</td>
+                    <td>89</td>	  	 
+                    <td>17</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jan-20</td>
+                    <td>89</td>
+                    <td>16</td>	  	 
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Feb-20</td>
+                    <td>90</td>
+                    <td>18</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Mar-20</td>
+                    <td>91</td>
+                    <td>18</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Apr-20</td>
+                    <td>91</td>
+                    <td>16</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">May-20</td>
+                    <td>92</td>
+                    <td>17</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jun-20</td>
+                    <td>93</td>
+                    <td>18</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jul-20</td>
+                    <td>94</td>
+                    <td>22</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+      </div>
+
+      <h4 class="text-center py-3 mt-3">App 會員</h4>
+      <div class="d-flex flex-md-row justify-content-around flex-wrap" style="margin-bottom: -10px;">
+
+        <div>
+          <h6 class="text-center">國泰世華</h6>
+          <p class="text-center text-secondary" style="margin: -1px 0px;font-size: 0.8rem;">單位：千</p>
+            <div class="table-responsive-md">
+              <table class="tabel table-hover bottomBorder text-right" style="margin-bottom: 22px;">
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">No.</th>
+                    <th scope="col">MAU</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jan-19</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Feb-19</td>
+                    <td>1,699</td>
+                    <td>847</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Mar-19</td>
+                    <td>1,746</td>
+                    <td>894</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Apr-19</td>
+                    <td>1,790</td>
+                    <td>911</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">May-19</td>
+                    <td>1,835</td>
+                    <td>946</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jun-19</td>
+                    <td>1,876</td>
+                    <td>956</td> 	 
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jul-19</td>
+                    <td>1,927</td>	  	 
+                    <td>1,003</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Aug-19</td>
+                    <td>1,988</td>	  	  
+                    <td>1,044</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Sep-19</td>
+                    <td>2,069</td>	  	  
+                    <td>1,087</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Oct-19</td>
+                    <td>2,163</td>	  	 
+                    <td>1,154</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Nov-19</td>
+                    <td>2,249</td>	  	  
+                    <td>1,190</td>
+                  </tr>
+                  <tr class="bg-warning">
+                    <td scope="row" class="text-nowrap">Dec-19</td>
+                    <td>2,340</td>	  	 
+                    <td>1,231</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jan-20</td>
+                    <td>2,415</td>
+                    <td>1,250</td>	  	 
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Feb-20</td>
+                    <td>2,512</td>
+                    <td>1,306</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Mar-20</td>
+                    <td>2,616</td>
+                    <td>1,393</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Apr-20</td>
+                    <td>2,709</td>
+                    <td>1,420</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">May-20</td>
+                    <td>2,804</td>
+                    <td>1,479</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jun-20</td>
+                    <td>2,903</td>
+                    <td>1,533</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jul-20</td>
+                    <td>3,002</td>
+                    <td>1,605</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+
+        <div>
+          <h6 class="text-center">國泰優惠</h6>
+          <p class="text-center text-secondary" style="margin: -1px 0px;font-size: 0.8rem;">單位：千</p>
+            <div class="table-responsive-md">
+              <table class="tabel table-hover bottomBorder text-right" style="margin-bottom: 22px;">
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">No.</th>
+                    <th scope="col">MAU</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jan-19</td>
+                    <td>1,583</td>
+                    <td>419</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Feb-19</td>
+                    <td>1,632</td>
+                    <td>441</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Mar-19</td>
+                    <td>1,671</td>
+                    <td>428</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Apr-19</td>
+                    <td>1,703</td>
+                    <td>403</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">May-19</td>
+                    <td>1,737</td>
+                    <td>426</td>
+                  </tr> 	  
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jun-19</td>
+                    <td>1,770</td>
+                    <td>424</td> 	 
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jul-19</td>
+                    <td>1,810</td>	  	 
+                    <td>431</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Aug-19</td>
+                    <td>1,848</td>	  	  
+                    <td>454</td>
+                  </tr> 
+                  <tr>
+                    <td scope="row" class="text-nowrap">Sep-19</td>
+                    <td>1,880</td>	  	  
+                    <td>456</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Oct-19</td>
+                    <td>1,911</td>	  	 
+                    <td>444</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Nov-19</td>
+                    <td>1,942</td>	  	  
+                    <td>456</td>
+                  </tr>
+                  <tr class="bg-warning">
+                    <td scope="row" class="text-nowrap">Dec-19</td>
+                    <td>1,975</td>	  	 
+                    <td>535</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jan-20</td>
+                    <td>2,001</td>
+                    <td>469</td>	  	 
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Feb-20</td>
+                    <td>2,025</td>
+                    <td>441</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Mar-20</td>
+                    <td>2,048</td>
+                    <td>458</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Apr-20</td>
+                    <td>2,069</td>
+                    <td>429</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">May-20</td>
+                    <td>2,088</td>
+                    <td>464</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jun-20</td>
+                    <td>2,104</td>
+                    <td>413</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jul-20</td>
+                    <td>2,127</td>
+                    <td>462</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+
+        <div>
+          <h6 class="text-center">國泰人壽</h6>
+          <p class="text-center text-secondary" style="margin: -1px 0px;font-size: 0.8rem;">單位：千</p>
+            <div class="table-responsive-md">
+              <table class="tabel table-hover bottomBorder text-right" style="margin-bottom: 22px;">
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">No.</th>
+                    <th scope="col">MAU</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jan-19</td>
+                    <td>515</td>
+                    <td>170</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Feb-19</td>
+                    <td>534</td>
+                    <td>156</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Mar-19</td>
+                    <td>560</td>
+                    <td>184</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Apr-19</td>
+                    <td>589</td>
+                    <td>188</td>
+                  </tr> 	 
+                  <tr>
+                    <td scope="row" class="text-nowrap">May-19</td>
+                    <td>626</td>
+                    <td>204</td>
+                  </tr> 	  
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jun-19</td>
+                    <td>648</td>
+                    <td>193</td> 	 
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jul-19</td>
+                    <td>683</td>	  	 
+                    <td>218</td>
+                  </tr> 	  
+                  <tr>
+                    <td scope="row" class="text-nowrap">Aug-19</td>
+                    <td>709</td>	  	  
+                    <td>209</td>
+                  </tr> 
+                  <tr>
+                    <td scope="row" class="text-nowrap">Sep-19</td>
+                    <td>724</td>	  	  
+                    <td>219</td>
+                  </tr> 	  
+                 	<tr>
+                    <td scope="row" class="text-nowrap">Oct-19</td>
+                    <td>761</td>	  	 
+                    <td>221</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Nov-19</td>
+                    <td>777</td>	  	  
+                    <td>233</td>
+                  </tr>
+                  <tr class="bg-warning">
+                    <td scope="row" class="text-nowrap">Dec-19</td>
+                    <td>810</td>	  	 
+                    <td>252</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jan-20</td>
+                    <td>830</td>
+                    <td>239</td>	  	 
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Feb-20</td>
+                    <td>852</td>
+                    <td>248</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Mar-20</td>
+                    <td>876</td>
+                    <td>258</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Apr-20</td>
+                    <td>900</td>
+                    <td>261</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">May-20</td>
+                    <td>923</td>
+                    <td>266</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jun-20</td>
+                    <td>962</td>
+                    <td>263</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jul-20</td>
+                    <td>968</td>
+                    <td>264</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+
+        <div>
+          <h6 class="text-center">股票快選</h6>
+          <p class="text-center text-secondary" style="margin: -1px 0px;font-size: 0.8rem;">單位：千</p>
+            <div class="table-responsive-md">
+              <table class="tabel table-hover bottomBorder text-right" style="margin-bottom: 22px;">
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">No.</th>
+                    <th scope="col">MAU</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jan-19</td>
+                    <td>321</td>
+                    <td>46</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Feb-19</td>
+                    <td>328</td>
+                    <td>41</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Mar-19</td>
+                    <td>337</td>
+                    <td>43</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Apr-19</td>
+                    <td>347</td>
+                    <td>45</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Apr-19</td>
+                    <td>357</td>
+                    <td>42</td>
+                  </tr>  	 
+                  <tr>
+                    <td scope="row" class="text-nowrap">May-19</td>
+                    <td>364</td>
+                    <td>42</td>
+                  </tr> 
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jun-19</td>
+                    <td>414</td>
+                    <td>88</td> 	 
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jul-19</td>
+                    <td>439</td>	  	 
+                    <td>88</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Aug-19</td>
+                    <td>472</td>	  	  
+                    <td>104</td>
+                  </tr> 
+                  <tr>
+                    <td scope="row" class="text-nowrap">Sep-19</td>
+                    <td>496</td>	  	  
+                    <td>104</td>
+                  </tr>
+                 <tr>
+                    <td scope="row" class="text-nowrap">Nov-19</td>
+                    <td>543</td>	  	  
+                    <td>87</td>
+                  </tr>
+                  <tr class="bg-warning">
+                    <td scope="row" class="text-nowrap">Dec-19</td>
+                    <td>522</td>	  	 
+                    <td>93</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jan-20</td>
+                    <td>544</td>
+                    <td>95</td>	  	 
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Feb-20</td>
+                    <td>576</td>
+                    <td>110</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Mar-20</td>
+                    <td>627</td>
+                    <td>150</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Apr-20</td>
+                    <td>663</td>
+                    <td>145</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">May-20</td>
+                    <td>701</td>
+                    <td>159</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jun-20</td>
+                    <td>732</td>
+                    <td>155</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jul-20</td>
+                    <td>768</td>
+                    <td>167</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+        
+        <div>
+          <h6 class="text-center">國泰證券</h6>
+          <p class="text-center text-secondary" style="margin: -1px 0px;font-size: 0.8rem;">單位：千</p>
+            <div class="table-responsive-md">
+              <table class="tabel table-hover bottomBorder text-right" style="margin-bottom: 22px;">
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">No.</th>
+                    <th scope="col">MAU</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jan-19</td>
+                    <td>155</td>
+                    <td>75</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Feb-19</td>
+                    <td>160</td>
+                    <td>74</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Mar-19</td>
+                    <td>166</td>
+                    <td>82</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Apr-19</td>
+                    <td>172</td>
+                    <td>86</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">May-19</td>
+                    <td>178</td>
+                    <td>88</td>
+                  </tr> 
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jun-19</td>
+                    <td>183</td>
+                    <td>84</td> 	 
+                  </tr> 
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jul-19</td>
+                    <td>188</td>	  	 
+                    <td>90</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Aug-19</td>
+                    <td>195</td>	  	  
+                    <td>97</td>
+                  </tr> 
+                  <tr>
+                    <td scope="row" class="text-nowrap">Sep-19</td>
+                    <td>203</td>	  	  
+                    <td>97</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Oct-19</td>
+                    <td>213</td>	  	 
+                    <td>108</td>
+                  </tr>
+                 <tr>
+                    <td scope="row" class="text-nowrap">Nov-19</td>
+                    <td>223</td>	  	  
+                    <td>114</td>
+                  </tr>
+                  <tr class="bg-warning">
+                    <td scope="row" class="text-nowrap">Dec-19</td>
+                    <td>235</td>	  	 
+                    <td>124</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jan-20</td>
+                    <td>243</td>
+                    <td>121</td>	  	 
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Feb-20</td>
+                    <td>258</td>
+                    <td>136</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Mar-20</td>
+                    <td>282</td>
+                    <td>170</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Apr-20</td>
+                    <td>297</td>
+                    <td>165</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">May-20</td>
+                    <td>311</td>
+                    <td>174</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jun-20</td>
+                    <td>326</td>
+                    <td>184</td>
+                  </tr>
+                  <tr>
+                    <td scope="row" class="text-nowrap">Jul-20</td>
+                    <td>345</td>
+                    <td>205</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+      </div>
+    </div>    
+  -->
+      
+
+
+        
+          
+  </section>
+ 
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+
+
+ 
+</body>
+
+</html>
