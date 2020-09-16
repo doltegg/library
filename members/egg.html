@@ -37,38 +37,9 @@
   h4 {
     font-weight: 500;
   }
-  .header {
-    height: 100vh;
-    background-image: url(img/eggplant.jpg);
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-  }
   li{
     line-height: 1.9;
     margin-left: -.5rem
-  }
-  table.bottomBorder{ 
-    border-collapse: collapse; 
-    border-top: 1px solid;
-    border-bottom: 1px solid;
-  }
-  table.bottomBorder tfoot{ 
-    border-top: 1px solid; 
-  }
-  table.bottomBorder td{ 
-    padding: 3px 8px; 
-    border: 0px; 
-    text-align: center;
-    line-height: 1.1;
-    font-size: 1rem;
-  }
-  table.bottomBorder th{ 
-    border-bottom: 1px dashed; 
-    padding: 2px 8px; 
-    text-align: center;
-    vertical-align: middle;
-    font-size: .9rem;
   }
   .timeline-section{
     position: relative;
@@ -117,15 +88,57 @@
   .card-w{
     width: 7.5rem;
   }
+  /*.header {
+    height: 100vh;
+    background-image: url(img/eggplant.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+  }*/
+  .header-carousel-item{
+    height: 450px;    
+  }
+  .bg-cover{
+    background-size: cover;
+    background-position: center center;
+  }
   </style>
 </head>
 
 <body>
   <!-- 標題 -->
-  <header class="header d-flex justify-content-center align-items-center">
-    <div class="text-center">
-      <h1 class="text-primary">許瑞宏</h1>
-      <h2 class="text-info">egg</h2>
+  <header><!--</header> class="header d-flex justify-content-center align-items-center">-->
+      <!--  <div class="text-center">
+        <h1 class="text-primary">許瑞宏</h1>
+        <h2 class="text-info">egg</h2>
+      </div>-->  
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+      </ol>
+
+      <div class="carousel-inner">
+        <div class="carousel-item header-carousel-item bg-cover active" style="background-image: url(img/egg_h.jpg);">
+        </div>
+        <div class="carousel-item header-carousel-item bg-cover" style="background-image: url(img/egg_i.jpg);">
+        </div>
+        <div class="carousel-item header-carousel-item bg-cover" style="background-image: url(img/egg_j.jpg);">
+        </div>
+        <div class="carousel-item header-carousel-item bg-cover" style="background-image: url(img/egg_k.jpg);">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
   </header>
 
@@ -801,7 +814,7 @@
 
         
           
-  </section>
+
  
 
 
