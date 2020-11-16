@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        body{
+            background: #FFDD55;
+        }
+        label{
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            /* background:#000; */
+            top: 0;
+            z-index: 2;
+        }
+        #clickMe{
+            display: none;
+        }
+        .outside{
+            width: 250px;
+            height: 200px;
+            /* outline: 1px solid #000; */
+            position: absolute;
+            left:0;
+            right:0;
+            bottom:0;
+            top:0;
+            margin: auto;
+            overflow: hidden;
+        }
+        .hamburgerOutside{
+            width: 200px;
+            height: 150px;
+            /* outline: 1px solid #000; */
+            position: absolute;
+            left:0;
+            right: 0;
+            top: 0;
+            bottom:0;
+            margin: auto;
+            transition: all .5s;
+            /* opacity: 0; */
+        }
+        .hamburger{
+            width: 200px;
+            height: 40px;
+            position: absolute;
+            transition: all .5s;
+        }
+        .ham1{
+            background: rgb(193,143,95);
+            border-radius: 30px 30px 15px 15px;
+            top: 0;
+        }
+        .ham2{
+            background: rgb(123,75,43);
+            border-radius: 10px;
+            top:0;
+            bottom: 0;
+            margin: auto;
+            overflow: hidden;
+        }
+        .ham2::before{
+            content:"";
+            width: 45px;
+            height: 45px;
+            background: rgb(257,206,134);
+            position: absolute;
+            top:-23px;
+            right:25px;
+            transform: rotate(45deg);
+        }
+        .ham3{
+            background: rgb(193,143,95);
+            border-radius: 15px 15px 30px 30px;
+            bottom: 0;
+        }
+        label:hover ~ .hamburgerOutside{
+            height: 200px;
+        }
+        label:hover ~ .hamburgerOutside .hamburger{
+            height: 50px;
+        }
+
+        /* 可樂 */
+        .colaOutside{
+            width: 170px;
+            height: 200px;
+            /* outline: 1px solid #222; */
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+            top: -200px;
+            transition: .5s all;
+        }
+        .straw{
+            width: 10px;
+            height: 150px;
+            background: #a00;
+            left: 0;
+            right: 0;
+            margin: auto;
+            transition: all .5s;
+        }
+        .cover{
+            height: 15px;
+            width: 160px;
+            background: #fff;
+            position: absolute;
+            top:40px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            z-index: 1;
+        }
+        .cover div{
+            width: 23px;
+            height: 15px;
+            float: left;
+            border-right: 3px solid rgba(0,0,0,.3);
+        }
+        .cup{
+            width: 100px;
+            border-top: 160px solid #fff;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+        .bubble{
+            width: 20px;
+            height: 20px;
+            background: rgb(88,12,9);
+            border-radius: 50%;
+            position: absolute;
+            top: 15px;
+            left: 30px;
+            opacity: 0;
+            transition: all .5s;
+        }
+        .bubble::before{
+            content: "";
+            width: 10px;
+            height: 10px;
+            background: rgb(88,12,9);
+            border-radius: 50%;
+            position: absolute;
+            top: -10px;
+            left: -20px;
+        }
+        label:hover ~ .colaOutside .bubble{
+            opacity: 1;
+        }
+        label:hover ~ .colaOutside .straw{
+            transform: rotate(10deg);
+        }
+        #clickMe:checked ~ .hamburgerOutside{
+            opacity: 0;
+
+        }
+        #clickMe:checked ~ .colaOutside{
+            top: 0;
+        }
+    </style>
+
+    <div class="outside">
+        <!-- 控制區域 -->
+            <input type="checkbox" id="clickMe">
+            <label for="clickMe"></label>
+        <!-- 繪圖區域 -->
+        <div class="hamburgerOutside">
+            <div class="hamburger ham1"></div>
+            <div class="hamburger ham2"></div>
+            <div class="hamburger ham3"></div>
+        </div>
+        <div class="colaOutside">
+            <div class="straw"></div>
+            <div class="cover">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="cup"></div>
+            <div class="bubble"></div>
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>

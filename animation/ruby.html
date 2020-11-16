@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ruby</title>
+</head>
+<body>
+    
+    <style>
+        *{
+            padding: 0; 
+            margin: 0;  
+            /* outline: 1px solid #000; */
+        }
+        body{
+            background: #A8D889;
+        }
+        .ruby{
+            width: 175px;
+            height: 150px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        .ruby div{
+            border-left-color: transparent;
+            border-right-color: transparent;
+            border-left-style: solid;
+            border-right-style: solid;
+            position: absolute;
+        }
+        .top div, .bottom div{
+            width: 0;
+            height: 0;
+        }
+        .t1{
+            border-bottom: 50px solid rgb(233,83,94);
+            border-left-width: 30px;
+            border-right-width: 28px;
+            left: 0;
+        }
+        .t2{
+            border-top: 50px solid rgb(232,69,90);
+            border-left-width: 28px;
+            border-right-width: 30px;
+            left: 30px;
+        }
+        .t3{
+            border-bottom: 50px solid rgb(236,109,130);
+            border-left-width: 30px;
+            border-right-width: 30px;
+            left: 58px;
+        }
+        .t4{
+            border-top: 50px solid rgb(200,18,55);
+            border-left-width: 30px;
+            border-right-width: 28px;
+            left: 88px;
+        }
+        .t5{
+            border-bottom: 50px solid rgb(184,43,60);
+            border-left-width: 28px;
+            border-right-width: 30px;
+            left: 118px;
+        }
+        .bottom{
+            top: 50px;
+        }
+        .b1{
+            border-top: 100px solid rgb(202,70,79);
+            border-left-width: 88px;
+            border-right-width: 0;
+        }
+        .b2{
+            border-top: 100px solid rgb(166,31,60);
+            border-left-width: 0px;
+            border-right-width: 88px;
+            left: 88px;
+        }
+        .b3{
+            border-top: 100px solid rgb(192,26,32);
+            border-left-width: 30px;
+            border-right-width: 30px;
+            left: 58px;
+        }
+    </style>
+
+
+
+    <div class="ruby">
+        <div class="top">
+            <div class="t1"></div>
+            <div class="t2"></div>
+            <div class="t3"></div>
+            <div class="t4"></div>
+            <div class="t5"></div>
+        </div>
+        <div class="bottom">
+            <div class="b1"></div>
+            <div class="b2"></div>
+            <div class="b3"></div>
+        </div>
+    </div>
+</body>
+</html>
