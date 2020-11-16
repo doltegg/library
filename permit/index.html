@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>工作證</title>
+</head>
+<body>
+    
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background: #0ef;
+        }
+        .outside{
+            width: 250px;
+            height: 410px;
+            position: fixed;
+            background-image: url("permit.png");
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        } 
+         .box{
+            width: 108px;
+            height: 15px;
+            position: absolute;
+            overflow: hidden;
+            top: 192px;
+            right: 32px;
+            /* outline: 1px solid #000;  */
+        }     
+        .time{
+            color: Tomato;
+            font-size: 7px;
+            font-family:Arial, Helvetica, sans-serif;
+            width: 108px;
+            height: 15px;
+            position: absolute;
+            /* outline: 1px solid #000; */
+            top: 0px;
+            right: 0px;
+            animation: run 6s infinite linear;
+            overflow: hidden;
+        }
+        
+        @keyframes run{
+            0%{
+                right: -130px;
+            }
+            100%{
+                right: 140px;
+            }
+        }        
+    </style>
+
+
+    <div class="outside">
+        <div class="box">
+            <div id="time" class="time"></div>
+        </div>		
+    </div>
+
+    <script>
+        function clock(){
+            var d = new Date();
+            document.getElementById("time").innerHTML = d.getFullYear() + "/" + (d.getMonth()+1)+ "/" + d.getDate()+" "+d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
+        }
+        setInterval(clock, 1000);
+        
+    </script>
+        
+
+</body>
+</html>
