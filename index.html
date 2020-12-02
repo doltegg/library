@@ -248,20 +248,9 @@
                     <!--重來-->
                   </button>
                 </div>
-                <div id="app" class="text-center pt-4">
-                  <!-- {{y}}{{yy}} <br>
-                  {{x}}{{xx}} <br>  -->
-                  <img :src="yy" style="width: 150px;" class="rounded-circle">
-                  <!-- <img :src="xx" style="width: 100px;"> -->
-                  <!-- <img v-if="mcw" class="img-fluid f-border" src="img/mcw01.jpg" style="width: 100px">
-                  <img v-if="na"  src="img/na01.jpg" style="width: 100px">
-                  <img v-if="egg" class="img-fluid f-border" src="img/egg01.jpg" style="width: 100px">
-                  <img v-if="ben" class="img-fluid f-border" src="img/ben01.jpg" style="width: 100px">
-                  <img v-if="vivien" class="img-fluid f-border" src="img/vivien01.jpg" style="width: 100px">
-                  <img v-if="astrid" class="img-fluid f-border" src="img/astrid01.jpg" style="width: 100px">
-                  <img v-if="amal" class="img-fluid f-border" src="img/amal01.jpg" style="width: 100px">
-                  <img v-if="susan" class="img-fluid f-border" src="img/susan01.jpg" style="width: 100px"> -->
-
+                <!-- 照片 -->
+                <div class="text-center pt-4">
+                  <img id="app" src="" style="width: 150px;" class="rounded-circle">
                 </div>
               </div>
 
@@ -1058,6 +1047,7 @@
     }
     function ok() {
       clearInterval(timer);
+      var app=document.getElementById("app");
       timer = '';
       var lucky = document.getElementById("oknum").value;
       if (!lucky) return;
@@ -1069,64 +1059,18 @@
           allData[spans[i].innerHTML] = 1;
         }
       }
-          // 試著寫<!-- 芷儀, 瑞宏, 慎淇, 芝萱, 筱婷, 智超, 昱宏, 宛霖, 黃薇, -->
-            var app = new Vue({
-              el: '#app',
-              data: {
-                y: lucky,
-                // x: '',
-                // xx: "img/" + x + "01.jpg"
-              },
-              computed: {
-                yy: function () {
-                  if(this.y==="芷儀"){
-                    return "img/na01.jpg"
-                  }else if(this.y==="瑞宏"){
-                    return "img/egg01.jpg"
-                  }else if(this.y==="慎淇"){
-                    return "img/shenchi01.jpg"
-                  }else if(this.y==="芝萱"){
-                    return "img/susan01.jpg"
-                  }else if(this.y==="筱婷"){
-                    return "img/amal01.jpg"
-                  }else if(this.y==="智超"){
-                    return "img/mcw01.jpg"
-                  }else if(this.y==="昱宏"){
-                    return "img/yulin01.jpg"
-                  }else if(this.y==="宛霖"){
-                    return "img/astrid01.jpg"
-                  }else if(this.y==="黃薇"){
-                    return "img/vivien01.jpg"
-                  }else {
-                    return "img/f01.jpg"
-                  }	
-                },
-                // x: function () {
-                //   if(this.y==="芷儀"){
-                //     return "na"
-                //   }else if(this.y==="瑞宏"){
-                //     return "egg"
-                //   }else if(this.y==="慎淇"){
-                //     return "shenchi"
-                //   }else if(this.y==="芝萱"){
-                //     return "susam"
-                //   }else if(this.y==="筱婷"){
-                //     return "amal"
-                //   }else if(this.y==="智超"){
-                //     return "mcw"
-                //   }else if(this.y==="昱宏"){
-                //     return "yulin"
-                //   }else if(this.y==="宛霖"){
-                //     return "astrid"
-                //   }else if(this.y==="黃薇"){
-                //     return "vivien"
-                //   }else {
-                //     return "f"
-                //   }
-                // }
-            },   
-          })
-          // 試著寫          
+      var theman={
+    	"芷儀": "na01.jpg",
+    	"瑞宏": "egg01.jpg",
+    	"慎淇": "shenchi01.jpg",
+    	"芝萱": "susan01.jpg",
+    	"筱婷": "amal01.jpg",
+    	"智超": "mcw01.jpg",
+    	"昱宏": "yulin01.jpg",
+    	"宛霖": "astrid01.jpg",
+    	"黃薇": "vivien01.jpg",
+      } 
+      app.src='img/'+ theman[lucky]; 
     }
     function GetRnd(min, max) {
       return parseInt(Math.random() * (max - min + 1));
