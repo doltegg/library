@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>忘年會抽獎</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap" rel="stylesheet">
+
+    <style>
+        body{
+            font-family: "Noto Sans TC";
+            background-color: pink;
+            font-size: 20px;
+        }
+        h1{
+            font-weight: 900;
+            text-align: center;
+        }
+        .playing {
+            /*transform: scale(1.1);*/
+            border-color: red; /*#ffc600;*/
+            box-shadow: 0 0 1rem red; /*#ffc600;*/
+        }      
+    </style>
+
+</head>
+<body>
+
+
+
+    <div class="container">
+        <div class="text-center my-5">
+            <h1>忘年會抽獎</h1>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3 col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">600 元禮券</h4>
+                        <h5 class="card-subtitle mb-2 text-muted">安慰獎</h5>
+                        <div class="input-group mt-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-pray fa-fw fa-lg"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="tt1">
+                        </div> 
+                        <div class="input-group mt-1 mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-sitemap fa-fw fa-lg"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="dtt1">
+                        </div>
+                        <div>
+                            <button class="btn btn-success px-3 hide" onclick="start(y='tt1')"><i class="far fa-play-circle fa-fw fa-lg"></i></button>
+                            <button class="btn btn-danger px-3 ml-1" onclick="ok(x='tt1')"><i class="far fa-stop-circle fa-fw fa-lg"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">600 元禮券</h4>
+                        <h5 class="card-subtitle mb-2 text-muted">安慰獎</h5>
+                        <div class="input-group mt-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-pray fa-fw fa-lg"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="tt2">
+                        </div> 
+                        <div class="input-group mt-1 mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-sitemap fa-fw fa-lg"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="dtt2">
+                        </div>
+                        <div>
+                            <button class="btn btn-success px-3 hide" onclick="start(y='tt2')"><i class="far fa-play-circle fa-fw fa-lg"></i></button>
+                            <button class="btn btn-danger px-3 ml-1" onclick="ok(x='tt2')"><i class="far fa-stop-circle fa-fw fa-lg"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">600 元禮券</h4>
+                        <h5 class="card-subtitle mb-2 text-muted">安慰獎</h5>
+                        <div class="input-group mt-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-pray fa-fw fa-lg"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="tt3">
+                        </div> 
+                        <div class="input-group mt-1 mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-sitemap fa-fw fa-lg"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="dtt3">
+                        </div>
+                        <div>
+                            <button class="btn btn-success px-3" onclick="start(y='tt3')"><i class="far fa-play-circle fa-fw fa-lg"></i></button>
+                            <button class="btn btn-danger px-3 ml-1" onclick="ok(x='tt3')"><i class="far fa-stop-circle fa-fw fa-lg"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">600 元禮券</h4>
+                        <h5 class="card-subtitle mb-2 text-muted">安慰獎</h5>
+                        <div class="input-group mt-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-pray fa-fw fa-lg"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="tt4">
+                        </div> 
+                        <div class="input-group mt-1 mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-sitemap fa-fw fa-lg"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="dtt4">
+                        </div>
+                        <div>
+                            <button class="btn btn-success px-3" onclick="start(y='tt4')"><i class="far fa-play-circle fa-fw fa-lg"></i></button>
+                            <button class="btn btn-danger px-3 ml-1" onclick="ok(x='tt4')"><i class="far fa-stop-circle fa-fw fa-lg"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">600 元禮券</h4>
+                        <h5 class="card-subtitle mb-2 text-muted">安慰獎</h5>
+                        <div class="input-group mt-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-pray fa-fw fa-lg"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="tt5">
+                        </div> 
+                        <div class="input-group mt-1 mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-sitemap fa-fw fa-lg"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="dtt5">
+                        </div>
+                        <div>
+                            <button class="btn btn-success px-3" onclick="start(y='tt5')"><i class="far fa-play-circle fa-fw fa-lg"></i></button>
+                            <button class="btn btn-danger px-3 ml-1" onclick="ok(x='tt5')"><i class="far fa-stop-circle fa-fw fa-lg"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">600 元禮券</h4>
+                        <h5 class="card-subtitle mb-2 text-muted">安慰獎</h5>
+                        <div class="input-group mt-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-pray fa-fw fa-lg"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="tt6">
+                        </div> 
+                        <div class="input-group mt-1 mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-sitemap fa-fw fa-lg"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="dtt6">
+                        </div>
+                        <div>
+                            <button class="btn btn-success px-3" onclick="start(y='tt6')"><i class="far fa-play-circle fa-fw fa-lg"></i></button>
+                            <button class="btn btn-danger px-3 ml-1" onclick="ok(x='tt6')"><i class="far fa-stop-circle fa-fw fa-lg"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+<!--
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+-->
+    <script>
+        var data=[
+                    {name: '劉一', dept: 'xa'},
+                    {name: '陳二', dept: 'xb'},
+                    {name: '張三', dept: 'xc'},
+                    {name: '李四', dept: 'xd'},
+                    {name: '王五', dept: 'xe'},
+                    {name: '趙六', dept: 'xf'},
+                    {name: '孫七', dept: 'xg'},
+                    {name: '周八', dept: 'xh'},
+                    {name: '吳九', dept: 'xi'},
+                    {name: '鄭十', dept: 'xj'},
+                    {name: '宋十一', dept: 'xk'},
+                    {name: '邰十二', dept: 'xl'}
+                 ];
+        
+        var timer, candidate;
+        let list = [];   //列出名單序號     
+        let items = document.getElementsByClassName("btn").length;         
+        for(var i = 0; i<data.length; i++) list.push(i); 
+
+        //啟動
+        function start(y){            
+            document.getElementById(y).classList.add("playing");
+            document.getElementById("d" + y).classList.add("playing");
+            list.forEach(function(item, index){
+                if(item === candidate) list.splice(index, 1)  //移除已中獎者
+            });
+            //console.log(list);
+            timer = setInterval('change(y)', 46);
+            for(var j = 0; j < items; j++) document.getElementsByClassName("btn")[j].disabled = true;
+            document.getElementsByClassName("btn")[2*(y.substr(2))-1].disabled = false;          
+        };
+        
+        //確認人選        
+        function ok(x){
+            clearInterval(timer);
+            timer = "";
+            let lucky = [document.getElementById(y).value,document.getElementById("d" + y ).value];
+            //console.log(candidate);            
+            document.getElementById(x).classList.remove("playing");
+            document.getElementById("d" + x).classList.remove("playing");
+            for(var j = 0; j<items; j++) document.getElementsByClassName("btn")[j].disabled = false;
+        };
+        
+        //開始跑馬        
+        function change(y){
+            candidate = list[GetRnd(0, list.length - 1)];
+            [document.getElementById(y).value,document.getElementById("d" + y ).value] = [data[candidate].name, data[candidate].dept];           
+        };
+        
+        function GetRnd(min, max){
+          return parseInt(Math.random() * (max - min + 1))
+        }        
+    </script>
+</body>
+</html>
