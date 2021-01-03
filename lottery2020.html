@@ -24,6 +24,11 @@
             font-weight: 900;
             text-align: center;
         }
+        .playing {
+            /*transform: scale(1.1);*/
+            border-color: red; /*#ffc600;*/
+            box-shadow: 0 0 1rem red; /*#ffc600;*/
+        }
     /*
         .item{
             display:flex;
@@ -78,7 +83,7 @@
                             <input type="text" class="form-control" id="dtt1">
                         </div>
                         <div>
-                            <button class="btn btn-success px-3" onclick="start(y='tt1')"><i class="far fa-play-circle fa-fw fa-lg"></i></button>
+                            <button class="btn btn-success px-3 hide" onclick="start(y='tt1')"><i class="far fa-play-circle fa-fw fa-lg"></i></button>
                             <button class="btn btn-danger px-3 ml-1" onclick="ok(x='tt1')"><i class="far fa-stop-circle fa-fw fa-lg"></i></button>
                         </div>
                     </div>
@@ -102,7 +107,7 @@
                             <input type="text" class="form-control" id="dtt2">
                         </div>
                         <div>
-                            <button class="btn btn-success px-3" onclick="start(y='tt2')"><i class="far fa-play-circle fa-fw fa-lg"></i></button>
+                            <button class="btn btn-success px-3 hide" onclick="start(y='tt2')"><i class="far fa-play-circle fa-fw fa-lg"></i></button>
                             <button class="btn btn-danger px-3 ml-1" onclick="ok(x='tt2')"><i class="far fa-stop-circle fa-fw fa-lg"></i></button>
                         </div>
                     </div>
@@ -375,10 +380,17 @@
         
         //啟動
         var candidates;
-        function start(y){
+        var items=document.getElementsByClassName("btn").length;
+        function start(y){            
+            document.getElementById(y).classList.add("playing");
+            document.getElementById("d" + y).classList.add("playing");
             candidates = data.filter(candidate => candidate.selected === 0);
             //console.table(candidates);
             timer = setInterval('change(y)', 46);
+            //console.log(document.getElementsByClassName("btn")[2*(y.substr(2))-2])
+            //document.getElementsByClassName("btn")[2*(y.substr(2))-2].disabled=true;
+            for(var j=0; j<items; j++) document.getElementsByClassName("btn")[j].disabled=true;
+            document.getElementsByClassName("btn")[2*(y.substr(2))-1].disabled=false;          
         }
         
         //確認人選
@@ -392,6 +404,9 @@
             //console.log(idx);
             data[idx].selected = 1; //註記已抽中的人
             document.getElementById("d" + x).value = data[idx].dept;
+            document.getElementById(x).classList.remove("playing");
+            document.getElementById("d" + x).classList.remove("playing");
+            for(var j=0; j<items; j++) document.getElementsByClassName("btn")[j].disabled=false;
         }
         
         
