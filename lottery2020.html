@@ -362,10 +362,12 @@
                     {name: '邰十二', dept: 'xl', selected: 0}
                  ];
         
+        let items=document.getElementsByClassName("btn").length; 
+        //產生名字陣列        
         let allname = data.map(function(item, index) {
             return item.name;
         })
-        //console.log(allname)
+        
 
         //產隨機數字
         function GetRnd(min, max){
@@ -374,43 +376,34 @@
         //開始跑馬
         var timer;
         function change(y){
-            document.getElementById(y).value = candidates[GetRnd(0, candidates.length - 1)].name;
-            document.getElementById("d" + y ).value = candidates[GetRnd(0, candidates.length - 1)].dept; 
+            let i = GetRnd(0, candidates.length - 1);
+            [document.getElementById(y).value,document.getElementById("d" + y ).value] = [candidates[i].name,candidates[i].dept]; 
+            //document.getElementById(y).value = candidates[GetRnd(0, candidates.length - 1)].name;
+            //document.getElementById("d" + y ).value = candidates[GetRnd(0, candidates.length - 1)].dept;            
         }        
         
         //啟動
         var candidates;
-        var items=document.getElementsByClassName("btn").length;
         function start(y){            
             document.getElementById(y).classList.add("playing");
             document.getElementById("d" + y).classList.add("playing");
             candidates = data.filter(candidate => candidate.selected === 0);
-            //console.table(candidates);
             timer = setInterval('change(y)', 46);
-            //console.log(document.getElementsByClassName("btn")[2*(y.substr(2))-2])
-            //document.getElementsByClassName("btn")[2*(y.substr(2))-2].disabled=true;
             for(var j=0; j<items; j++) document.getElementsByClassName("btn")[j].disabled=true;
             document.getElementsByClassName("btn")[2*(y.substr(2))-1].disabled=false;          
         }
         
-        //確認人選
-        var lucky, idx;        
+        //確認人選        
         function ok(x){
             clearInterval(timer);
             timer = "";
-            lucky = document.getElementById(x).value;
-            //console.log(lucky);
-            idx = allname.indexOf(lucky);    
-            //console.log(idx);
-            data[idx].selected = 1; //註記已抽中的人
-            document.getElementById("d" + x).value = data[idx].dept;
+            let lucky = [document.getElementById(y).value,document.getElementById("d" + y ).value];
+            let k = allname.indexOf(lucky[0]);    
+            data[k].selected = 1;  //註記已抽中的人
             document.getElementById(x).classList.remove("playing");
             document.getElementById("d" + x).classList.remove("playing");
             for(var j=0; j<items; j++) document.getElementsByClassName("btn")[j].disabled=false;
-        }
-        
-        
- 
+        } 
     </script>
 </body>
 </html>
