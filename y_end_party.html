@@ -762,7 +762,7 @@
             //list.forEach(function(item, index){
             //    if(item === candidate) list.splice(index, 1)  //移除已中獎者
             //});
-            list.splice(list.indexOf(candidate), 1);  //移除已中獎者
+            if(list.indexOf(candidate) !== -1) list.splice(list.indexOf(candidate), 1);  //移除已中獎者
             //console.log(list);
             timer = setInterval('change(y)', 46);
             for(var j = 0; j < items; j++) document.getElementsByClassName("btn")[j].disabled = true;
@@ -773,7 +773,7 @@
         function ok(x){
             clearInterval(timer);
             timer = "";
-            let lucky = [document.getElementById(y).value,document.getElementById("d" + y ).value];
+            let lucky = [document.getElementById(x).value,document.getElementById("d" + x ).value];
             //console.log(candidate);            
             document.getElementById(x).classList.remove("playing");
             document.getElementById("d" + x).classList.remove("playing");
