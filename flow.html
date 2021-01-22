@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title></title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+  <style>
+	* {
+	  margin: 0;
+	  padding: 0;
+	  list-style: none;
+	  font-family: "Noto Sans TC", sans-serif;
+	}
+
+	body {
+	  background-color: #edece1;
+	}
+
+	.wrap {
+	  width: 960px;
+	  margin: auto;
+	}
+
+	.timeline {
+	  padding: 100px 0 200px;
+	}
+	.timeline::after {
+	  content: "";
+	  display: block;
+	  width: 100%;
+	  height: 0;
+	  clear: both;
+	}
+	.timeline li {
+	  width: 50%;
+	  box-sizing: border-box;
+	  padding: 20px 0;
+	  position: relative;
+	}
+	.timeline li:before {
+	  content: "";
+	  position: absolute;
+	  width: 20px;
+	  height: 20px;
+	  border-radius: 50%;
+	  background-color: #aaa;
+	  z-index: 2;
+	  top: 0;
+	  bottom: 0;
+	  margin: auto;
+	}
+	.timeline li:nth-child(odd) {
+	  float: left;
+	  padding-right: 100px;
+	}
+	.timeline li:nth-child(odd)::after {
+	  content: "";
+	  position: absolute;
+	  z-index: -1;
+	  width: 1px;
+	  top: 0;
+	  height: 100%;
+	  background-color: #ccc;
+	  right: 0;
+	}
+	.timeline li:nth-child(odd)::before {
+	  right: -10px;
+	}
+	.timeline li:nth-child(odd) h2::after {
+	  right: 0;
+	}
+	.timeline li:nth-child(even) {
+	  float: right;
+	  padding-left: 100px;
+	  transform: translateY(50%);
+	}
+	.timeline li:nth-child(even)::before {
+	  left: -10px;
+	}
+	.timeline li:nth-child(even) h2::after {
+	  left: 0;
+	}
+	.timeline li:last-child::after {
+	  height: 50%;
+	}
+	.timeline a {
+	  display: block;
+	  text-decoration: none;
+	  background-color: #fff;
+	  border: 1px solid #aaa;
+	  box-sizing: border-box;
+	  padding: 20px;
+	  border-radius: 10px;
+	  box-shadow: 3px 3px 5px #888;
+	}
+	.timeline a:hover {
+	  background-color: #6fa5f6;
+	}
+	.timeline a:hover h2, .timeline a:hover p {
+	  color: #fff;
+	}
+	.timeline h2 {
+	  color: #333;
+	  font-weight: 700;
+	}
+	.timeline h2::after {
+	  content: "";
+	  position: absolute;
+	  height: 1px;
+	  width: 100px;
+	  background-color: #aaa;
+	  top: 0;
+	  bottom: 0;
+	  margin: auto;
+	}
+	.timeline p {
+	  color: #666;
+	  font-weight: 100;
+	}
+
+	.clearcheck {
+	  background-color: #fff;
+	  border: 1px solid #aaa;
+	  box-sizing: border-box;
+	  padding: 20px;
+	  border-radius: 10px;
+	  box-shadow: 3px 3px 5px #888;
+	}
+
+	h5 {
+	  position: fixed;
+	  left: 0px;
+	  bottom: 5px;
+	  width: 100%;
+	  text-align: center;
+	}
+	.icon{
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		background-color: white;
+		margin: 20px auto -100px auto;
+		text-align: center;
+		line-height: 60px;
+	}
+  </style>
+
+
+
+
+</head>
+<body>
+	<div class="wrap">
+	  <h1>金魚都能懂的這個網頁畫面怎麼切</h1>
+	  <p>金魚都能懂的系列教學，是 Amos 針對網頁設計新手所設計的一套入門教學影片，一系列的教學影片從 HTML 到 CSS 以及 bootstrap 框架還有 jQuery 通通都包含在內了，可謂是新手入門最佳教學影片阿，重點是...完全免費!!!</p>
+	  <div class="icon"><i class="fas fa-user-tag fa-2x"></i></div>
+	  <ul class="timeline">
+	    <li><a href="javascript:;">
+	        <h2>圖文滿版區塊</h2>
+	        <p>本篇重點問題回顧: 列出重點希望各位可以好	好的將影片回放複習喔，另外幾個重點問題中，Amos已經有影片的會直接附上連結給各位參考取用。 為何需要reset...</p></a></li>
+	    <li><a href="javascript:;">
+	        <h2>互動圖文卡片</h2>
+	        <p>大家好～ 我是 Amos，這次要跟大家分享的是	切版的教學，如果您本身對於 HTML &amp; CSS 的基礎還不了解的話，建議您可以先看去年鐵人的基礎教學 本...</p></a></li>
+	    <li><a href="javascript:;">
+	        <h2>人員介紹卡片</h2>
+	        <p>大家好～ 我是 Amos，這次要跟大家分享的是切版的教學，如果您本身對於 HTML &amp; CSS 的基礎還不了解的話，建議您可以先看去年鐵人的基礎教學 本...</p></a></li>
+	    <li><a href="javascript:;">
+	        <h2>交錯漂浮版</h2>
+	        <p>大家好～ 我是 Amos，這次要跟大家分享的是切版的教學，如果您本身對於 HTML &amp; CSS 的基礎還不了解的話，建議您可以先看去年鐵人的基礎教學 本...</p></a></li>
+	    <li><a href="javascript:;">
+	        <h2>超通用橫式版面</h2>
+	        <p>大家好～ 我是 Amos，這次要跟大家分享的是切版的教學，如果您本身對於 HTML &amp; CSS 的基礎還不了解的話，建議您可以先看去年鐵人的基礎教學 本...</p></a></li>
+	    <li><a href="javascript:;">
+	        <h2>1到5切版技巧原理彙整</h2>
+	        <p>大家好～ 我是 Amos，這次要跟大家分享的是切版的教學，如果您本身對於 HTML &amp; CSS 的基礎還不了解的話，建議您可以先看去年鐵人的基礎教學 本...</p></a></li>
+	    <li><a href="javascript:;">
+	        <h2>網頁頁尾版塊</h2>
+	        <p>大家好～ 我是 Amos，這次要跟大家分享的是切版的教學，如果您本身對於 HTML &amp; CSS 的基礎還不了解的話，建議您可以先看去年鐵人的基礎教學 本...</p></a></li>
+	    <li><a href="javascript:;">
+	        <h2>導覽列</h2>
+	        <p>大家好～ 我是 Amos，這次要跟大家分享的是切版的教學，如果您本身對於 HTML &amp; CSS 的基礎還不了解的話，建議您可以先看去年鐵人的基礎教學 本...</p></a></li>
+	    <li><a href="javascript:;">
+	        <h2>變化你的導覽列</h2>
+	        <p>大家好～ 我是 Amos，這次要跟大家分享的是切版的教學，如果您本身對於 HTML &amp; CSS 的基礎還不了解的話，建議您可以先看去年鐵人的基礎教學 本...</p></a></li>
+	    <li><a href="javascript:;">
+	        <h2>網站麵包屑</h2>
+	        <p>大家好～ 我是 Amos，這次要跟大家分享的是切版的教學，如果您本身對於 HTML &amp; CSS 的基礎還不了解的話，建議您可以先看去年鐵人的基礎教學 本...</p></a></li>
+	    <li><a href="javascript:;">
+	        <h2>方塊酥版面</h2>
+	        <p>大家好～ 我是 Amos，這次要跟大家分享的是切版的教學，如果您本身對於 HTML &amp; CSS 的基礎還不了解的話，建議您可以先看去年鐵人的基礎教學 本...</p></a></li>
+	    <li><a href="javascript:;">
+	        <h2>破格式設計</h2>
+	        <p>大家好～ 我是 Amos，這次要跟大家分享的是切版的教學，如果您本身對於 HTML &amp; CSS 的基礎還不了解的話，建議您可以先看去年鐵人的基礎教學 本...</p></a></li>
+	    <li><a href="javascript:;">
+	        <h2>表格怎麼切</h2>
+	        <p>大家好～ 我是 Amos，這次要跟大家分享的是切版的教學，如果您本身對於 HTML &amp; CSS 的基礎還不了解的話，建議您可以先看去年鐵人的基礎教學 本...</p></a></li>
+	    <li><a href="javascript:;">
+	        <h2>側邊選單怎麼切</h2>
+	        <p>大家好～ 我是 Amos，這次要跟大家分享的是切版的教學，如果您本身對於 HTML &amp; CSS 的基礎還不了解的話，建議您可以先看去年鐵人的基礎教學 本...</p></a></li>
+	    <li><a href="javascript:;">
+	        <h2>動態收合式側邊選單</h2>
+	        <p>大家好～ 我是 Amos，這次要跟大家分享的是切版的教學，如果您本身對於 HTML &amp; CSS 的基礎還不了解的話，建議您可以先看去年鐵人的基礎教學 本...</p></a></li>
+	    <li><a href="javascript:;">
+	        <h2>進化了!多層次收合選單!</h2>
+	        <p>大家好～ 我是 Amos，這次要跟大家分享的是切版的教學，如果您本身對於 HTML &amp; CSS 的基礎還不了解的話，建議您可以先看去年鐵人的基礎教學 本...</p></a></li>
+	    <li><a href="javascript:;">
+	        <h2>訂單進度條</h2>
+	        <p>大家好～ 我是 Amos，這次要跟大家分享的是切版的教學，如果您本身對於 HTML &amp; CSS 的基礎還不了解的話，建議您可以先看去年鐵人的基礎教學 本...</p></a></li>
+	    <li><a href="javascript:;">
+	        <h2>登入表單</h2>
+	        <p>大家好～ 我是 Amos，這次要跟大家分享的是切版的教學，如果您本身對於 HTML &amp; CSS 的基礎還不了解的話，建議您可以先看去年鐵人的基礎教學 本...</p></a></li>
+	    <li><a href="javascript:;">
+	        <h2>訊息對話紀錄</h2>
+	        <p>大家好～ 我是 Amos，這次要跟大家分享的是切版的教學，如果您本身對於 HTML &amp; CSS 的基礎還不了解的話，建議您可以先看去年鐵人的基礎教學 本...</p></a></li>
+	    <li><a href="javascript:;">
+	        <h2>時間軸</h2>
+	        <p>大家好～ 我是 Amos，這次要跟大家分享的是切版的教學，如果您本身對於 HTML &amp; CSS 的基礎還不了解的話，建議您可以先看去年鐵人的基礎教學 本...</p></a></li>
+	  </ul>
+  <h3 class="clearcheck">clear-check：）</h3>
+</div>
+<h5>Practice Test | <a href="https://ithelp.ithome.com.tw/articles/10225133" target="_blank">source (CSScoke)</a></h5>
+</body>
+</html>
