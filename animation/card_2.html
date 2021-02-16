@@ -5,144 +5,148 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <title>Neumorphism Cards</title>
+    <title>Light Version Neumorphism Cards</title>
 
     <style>
         *{
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: consolas;
+            font-family: 'Poppins', sans-serif;
         }
         body{
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: #111;
+            background: #ebf5fc;
         }
         .container{
-            position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 40px 0;
+            max-width: 1200px;
             flex-wrap: wrap;
+            padding: 40px 0;
         }
-        .container .box{
+        .container .card{
             position: relative;
-            width: 320px;
+            min-width: 320px;
             height: 400px;
-            color: #fff;
-            background: #111;
+            box-shadow: inset 5px 5px 5px rgba(0,0,0,0.05),
+                        inset -5px -5px 5px rgba(255,255,255,0.5),
+                        5px 5px 5px rgba(0,0,0,0.05),
+                        -5px -5px 5px rgba(255,255,255,0.5);
+            border-radius: 15px;
+            margin: 30px;
+        }
+        .container .card .box{
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            background: #ebf5fc;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-radius: 15px;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 20px 30px;
             transition: 0.5s;
         }
-        .container .box:hover{
-            transform: translateY(-20px);
+        .container .card:hover .box{
+            transform: translateY(-50px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            background: linear-gradient(45deg, #b95ce4, #4f29cd);
         }
-        .container .box::before{
-            content: '';
+        .container .card .box .content{
+            padding: 20px;
+            text-align: center;
+        }
+        .container .card .box .content h2{
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg,#ffbc00,#ff0058);
+            top: -10px;
+            right: 30px;
+            font-size: 8em;
+            color: rgba(0,0,0,0.02);
+            transition: 0.5s;
+            pointer-events: none;
         }
-        .container .box::after{
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg,#ffbc00,#ff0058);
-            filter: blur(30px);
+        .container .card:hover .box .content h2{
+            color: rgba(0,0,0,0.1);
         }
-        .container .box:nth-child(2)::before,
-        .container .box:nth-child(2)::after{
-            background: linear-gradient(315deg, #03a9f4,#ff0058);
+        .container .card .box .content h3{
+            font-size: 1.8em;
+            color: #777;
+            z-index: 1;
+            transition: 0.5s;
         }
-        .container .box:nth-child(3)::before,
-        .container .box:nth-child(3)::after{
-            background: linear-gradient(315deg, #4dff03,#ff0058);
+        .container .card:hover .box .content h3{
+            font-size: 1.1em;
+            color: #777;
+            z-index: 1;
+            transition: 0.5s;
         }
-        .container .box span{
-            position: absolute;
-            top: 6px;
-            left: 6px;
-            right: 6px;
-            bottom: 6px;
-            background: rgba(0,0,0,0.6);
-            z-index: 2;
+        .container .card .box .content p{
+            font-size: 1em;
+            font-weight: 300;
+            color: #777;
+            z-index: 1;
+            transition: 0.5s;
         }
-        .container .box span::before{
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 50%;
-            height: 100%;
-            background: rgba(255,255,255,0.1);
-            pointer-event: none;
+        .container .card:hover .box .content h3,
+        .container .card:hover .box .content p{
+            color: #fff;
         }
-        .container .box .content{
+        .container .card .box .content a{
             position: relative;
-            z-index: 10;
-            padding: 20px 40px;
-        }
-        .container .box .content h2{
-            font-size: 2em;
-            color: #fff;
-            margin-bottom: 10px;
-        }
-        .container .box .content p{
-            font-size: 1.1em;
-            color: #fff;
-            margin-bottom: 10px;
-            line-height: 1.4em;
-        }
-        .container .box .content a{
             display: inline-block;
-            font-size: 1.1em;
-            color: #111;
-            background: #fff;
-            padding: 10px;
-            text-decoration: none;
-            font-weight: 700;
+             padding: 8px 20px;
+             background: #03a9f4;
+             margin-top: 15px;
+             border-radius: 20px;
+             color: #fff;
+             text-decoration: none;
+             font-weight: 400;
+             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .container .card:hover .box .content a{
+            background: #ff568f;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="box">
-            <span></span>
-            <div class="content">
-                <h2>Card One</h2>
-                <p>It is also used to temporarily replace text in a process called greeking, which allows designers to consider the form of a webpage or publication, without the meaning of the text influencing the design.</p>
-                <a href="#">Read More</a>
+        <div class="card">
+            <div class="box">
+                <div class="content">
+                    <h2>01</h2>
+                    <h3>Card One</h3>
+                    <p>ign, Lorem may be used aceholder before copy is available. It is also used to temporarily replace text in a process called greeking, which allows designers to consider the form of a webpage or publication, without the meaning of the text influencing the design.</p>
+                    <a href="#">Read More</a>
+                </div>
             </div>
         </div>
-        <div class="box">
-            <span></span>
-            <div class="content">
-                <h2>Card Two</h2>
-                <p>It is also used to temporarily replace text in a process called greeking, which allows designers to consider the form of a webpage or publication, without the meaning of the text influencing the design.</p>
-                <a href="#">Read More</a>
+        <div class="card">
+            <div class="box">
+                <div class="content">
+                    <h2>02</h2>
+                    <h3>Card Two</h3>
+                    <p>Lorem may be used before final copy is available. It is also used to temporarily replace text in a process called greeking, which allows designers to consider the form of a webpage or publication, without the meaning of the text influencing the design.</p>
+                    <a href="#">Read More</a>
+                </div>
             </div>
         </div>
-        <div class="box">
-            <span></span>
-            <div class="content">
-                <h2>Card Three</h2>
-                <p>It is also used to temporarily replace text in a process called greeking, which allows designers to consider the form of a webpage or publication, without the meaning of the text influencing the design.</p>
-                <a href="#">Read More</a>
+        <div class="card">
+            <div class="box">
+                <div class="content">
+                    <h2>03</h2>
+                    <h3>Card Three</h3>
+                    <p>Lorem may be used as a placeholder copy is available. It is also used to temporarily replace text in a process called greeking, which allows designers to consider the form of a webpage or publication, without the meaning of the text influencing the design.</p>
+                    <a href="#">Read More</a>
+                </div>
             </div>
         </div>
-    </div>    
+    </div>
 </body>
 </html>
