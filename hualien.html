@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hualien Trip</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:300,400,500,600,700,800&display=swap" rel="stylesheet">
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        /* @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@200;300;400;500;600;700;800;900&display=swap'); */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+        /* @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap'); */
+        /* @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@200;300;400;500;600;700;800;900&display=swap'); */
+        @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap');
+
+        
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Raleway','Noto Sans TC', 微軟正黑體, 'Poppins', sans-serif; /* 'Ubuntu',  'Rubik', 'Rajdhani' */            
+        }
+        body{
+            background: #121212; //#2e364a;
+        }
+        .sub{
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 5em;
+            padding: 1em 0 1.5em;
+            background: #121212;
+            z-index: 100;
+        }
+        h1{          
+            color: #fff;            
+            font-size: 2.5em;
+            font-weight: 800;            
+            text-align: center;
+        }
+        .timeline{
+            position: relative;
+            max-width: 1200px;
+            margin: 100px auto;
+        }
+        .timeline:first-child{
+            padding-top: 5em;
+        }
+        .container{
+            padding: 10px 50px;
+            position: relative;
+            width: 50%;
+            /* background: rgba(0,0,0,0.3); */
+            /* animation: movedown 1s linear forwards; */
+            /* opacity: 0; */
+        }
+        .text-box{
+            padding: 20px 30px;
+            background: #fff;
+            position: relative;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+        .left-container{
+            left: 0;            
+        }
+        .right-container{
+            left: 50%;
+        }
+        .container .iBox{
+            position: absolute;
+            width: 40px;
+            height: 40px;            
+            border-radius: 50%;
+            right: -20px;
+            top: 32px;
+            background: #fff;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* color: #fff; */
+        }
+        /* .container .iBox.pink{
+            background: pink;
+        } */
+        .right-container .iBox{
+            left: -20px;
+        }
+        .timeline::after{
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 100%;
+            background: #fff;
+            top: 0;
+            left: 50%;
+            margin-left: -3px;
+            z-index: -1;
+            animation: moveline 6s linear forwards;
+        }
+        .text-box h2{
+            font-weight: 600;
+            color: #0f02c4;
+        }
+        .text-box small{
+            display: inline-block;
+            margin-bottom: 15px;
+            font-size: 16px;
+            color: #121212;
+        }
+        .text-box p{
+            color: #333;
+            line-height: 1.75; 
+        }
+        .text-box p a{
+            background: green;
+            text-decoration: none;
+            color: #fff;
+            padding: 0 10px;
+            border-radius: 10px;
+            line-height: 2em;
+        }
+        .text-box p a:hover{
+            color: green;
+            font-weight: 600;
+            background: #fff;
+        }
+        .left-arrow{
+            height: 0;
+            width: 0;
+            position: absolute;
+            top: 28px;
+            z-index: 1;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            border-left: 15px solid #fff;
+            right: -15px;
+        }
+        .right-arrow{
+            height: 0;
+            width: 0;
+            position: absolute;
+            top: 28px;
+            z-index: 1;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            border-right: 15px solid #fff;
+            left: -15px;
+        }
+
+        @media screen and (max-width: 600px){
+            .timeline{
+                margin: 100px auto;
+            }
+            .timeline::after{
+                left: 31px;
+            }
+            .container{
+                width: 100%;
+                padding-left: 80px;
+                padding-right: 25px;
+            }
+            .text-box{
+                font-size: 13px;
+            }
+            .text-box small{
+                margin-bottom: 10px;
+            }
+            .right-container{
+                left: 0;
+            }
+            .left-container .iBox,
+            .right-container .iBox{
+                left: 10px;
+            }
+            .left-arrow,
+            .right-arrow{
+                border-right: 15px solid #fff;
+                border-left: 0;
+                left: -15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sub">
+        <h1>6/30 - 7/2 花蓮行</h1>
+    </div>
+    
+
+    <div class="timeline">
+        <div class="container left-container">
+            <div class="iBox pink">30<sup>th</sup></div>
+            <div class="text-box">
+                <h2>集合時間地點</h2>
+                <small>10:30 AM </small>
+                <p>大家開車自行至 DAKA 集合</p>
+                <span class="left-arrow"></span>
+            </div>
+        </div>
+        <div class="container right-container">
+            <div class="iBox pink">30<sup>th</sup></div>
+            <div class="text-box">
+                <h2>台泥 DAKA 園區</h2>
+                <small>10:30 - 11:10 AM</small>
+                <p><i class="fas fa-map-marker-alt"></i> <a href="https://goo.gl/maps/ZyMEPWKcTwc6fqxN7" target="_blank">花蓮縣秀林鄉和平村和平 263 號</a></p>
+                <span class="right-arrow"></span>
+            </div>
+        </div>
+        <div class="container left-container">
+            <div class="iBox pink">30<sup>th</sup></div>
+            <div class="text-box">
+                <h2>太魯閣大衆餐廳台菜午餐</h2>
+                <small>12:00 - 13:00 PM</small>
+                <p><i class="fas fa-map-marker-alt"></i> <a href="https://goo.gl/maps/GCve3M3XDcxif8Tt7" target="_blank">花蓮縣秀林鄉富世 275-1 號</a><br>
+                    <i class="fas fa-phone"></i> 038-611-809</p>
+                <span class="left-arrow"></span>
+            </div>
+        </div>
+        <div class="container right-container">
+            <div class="iBox pink">30<sup>th</sup></div>
+            <div class="text-box">
+                <h2>砂卡礑或綠水步道</h2>
+                <small>13:10 - 14:30 PM</small>
+                <!-- <p></p> -->
+                <span class="right-arrow"></span>
+            </div>
+        </div>
+        <div class="container left-container">
+            <div class="iBox pink">30<sup>th</sup></div>
+            <div class="text-box">
+                <h2>新城 48-6 民宿 check in</h2>
+                <small>15:00 PM</small>
+                <p><i class="fas fa-map-marker-alt"></i> <a href="https://goo.gl/maps/5UBJ8Z419MTfLQBk6" target="_blank">花蓮縣新城鄉中山路 48-6 號</a><br>
+                    <i class="fas fa-phone"></i> 0975-090-597<br>
+                </p>
+                <span class="left-arrow"></span>
+            </div>
+        </div>
+        <div class="container right-container">
+            <div class="iBox pink">30<sup>th</sup></div>
+            <div class="text-box">
+                <h2>新城景點</h2>
+                <small>15:00 - 17:00</small>
+                <p><i class="fas fa-location-arrow"></i> 新城天主堂<br>
+                    <i class="fas fa-location-arrow"></i> 新城照相館<br>
+                    <i class="fas fa-location-arrow"></i> 佳興冰果室
+                </p>
+                <span class="right-arrow"></span>
+            </div>
+        </div>
+        <div class="container left-container">
+            <div class="iBox pink">30<sup>th</sup></div>
+            <div class="text-box">
+                <h2>慶豐年餐廳原住民風味餐</h2>
+                <small>17:30 - 18:30 PM</small>
+                <p><i class="fas fa-map-marker-alt"></i> <a href="https://goo.gl/maps/uaqqZNf1XotVJBBv5" target="_blank">花蓮縣新城鄉中山路 1-11 號 1 樓</a><br>
+                    <i class="fas fa-phone"></i> 038-610-220
+                </p>
+                <span class="left-arrow"></span>
+            </div>            
+        </div>
+        <div class="container right-container">
+            <div class="iBox pink">30<sup>th</sup></div>
+            <div class="text-box">
+                <h2>回民宿</h2>
+                <small>18:30 -</small>
+                <p></p>
+                <span class="right-arrow"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="timeline">
+        <div class="container left-container">
+            <div class="iBox pink">1<sup>st</sup></div>
+            <div class="text-box">
+                <h2>獨木舟賞日出</h2>
+                <small>04:00 - 07:00 AM</small>
+                <p>
+                    <span style="color:#5044fa">「無痕海洋 2023」清水斷崖獨木舟</span><br>
+                    <i class="fas fa-map-marker-alt"></i> <a href="https://goo.gl/maps/WEmo14zhAiwFgKFr5" target="_blank">花蓮縣秀林鄉海濱路 98-1 號</a><br>
+                    <i class="fas fa-phone"></i> 0968-688-791
+                </p>
+                <span class="left-arrow"></span>
+            </div>
+        </div>
+        <div class="container right-container">
+            <div class="iBox pink">1<sup>st</sup></div>
+            <div class="text-box">
+                <h2>早醒早餐店</h2>
+                <small>07:30 - 11:00 AM</small>
+                <p>
+                    <span style="color:#5044fa">早醒早餐、民宿休息</span><br>
+                    <i class="fas fa-map-marker-alt"></i> <a href="https://goo.gl/maps/JsiN1uAJtwrAAGWN8" target="_blank">花蓮縣秀林鄉秀林村民治路 41 之 1 號</a><br>
+                    <i class="fas fa-phone"></i> 0903-455-398
+                </p>
+                <span class="right-arrow"></span>
+            </div>
+        </div>
+        <div class="container left-container">
+            <div class="iBox pink">1<sup>st</sup></div>
+            <div class="text-box">
+                <h2>康樂小漁村散策 (魚刺人雞蛋糕)</h2>
+                <small>11:30 - 12:00 AM</small>
+                <p>
+                    <i class="fas fa-map-marker-alt"></i> <a href="https://goo.gl/maps/F8vKQyWjhcfMiVum9" target="_blank">花蓮縣新城鄉海岸路 22 號</a>
+                </p>
+                <span class="left-arrow"></span>
+            </div>
+        </div>
+        <div class="container right-container">
+            <div class="iBox pink">1<sup>st</sup></div>
+            <div class="text-box">
+                <h2>娜滋滋烤魚午餐</h2>
+                <small>12:30 - 13:30 PM</small>
+                <p>
+                    <i class="fas fa-map-marker-alt"></i> <a href="https://goo.gl/maps/MEatgKXenvuYpxaB9" target="_blank">花蓮縣花蓮市和平路 92 之 6 號</a> <br>
+                    <i class="fas fa-phone"></i> 0958-361-156
+                </p>
+                <span class="right-arrow"></span>
+            </div>
+        </div>
+        <div class="container left-container">
+            <div class="iBox pink">1<sup>st</sup></div>
+            <div class="text-box">
+                <h2>雲山水植物農場</h2>
+                <small>14:00 - 15:00 PM</small>
+                <p>
+                    <span style="color:#5044fa">門票 120 元 (可抵 50 元消費)</span><br>
+                    <i class="fas fa-map-marker-alt"></i> <a href="https://goo.gl/maps/uf9DhaYAo2jyH2ot6" target="_blank">花蓮縣壽豐鄉豐坪路二段 2 巷 201 弄 88 號</a><br>
+                    <i class="fas fa-phone"></i> 0968-799-780
+                </p>
+                <span class="left-arrow"></span>
+            </div>
+        </div>
+        <div class="container right-container">
+            <div class="iBox pink">1<sup>st</sup></div>
+            <div class="text-box">
+                <h2>鳳林鎮</h2>
+                <small>15:30 - 16:50 PM</small>
+                <p>
+                    <i class="fas fa-location-arrow"></i> 林田神社、<br>
+                    <i class="fas fa-location-arrow"></i> 煙樓、<br>
+                    <i class="fas fa-location-arrow"></i> 美好花生
+                </p>
+                <span class="right-arrow"></span>
+            </div>
+        </div>
+        <div class="container left-container">
+            <div class="iBox pink">1<sup>st</sup></div>
+            <div class="text-box">
+                <h2>月廬食堂梅子雞晚餐</h2>
+                <small>17:00 - 18:30 PM</small>
+                <p>
+                    <i class="fas fa-map-marker-alt"></i> <a href="https://goo.gl/maps/Qpe6BhtCBURiCsYX6" target="_blank">花蓮縣鳳林鎮鳳鳴一路 71 號</a><br>
+                    <i class="fas fa-phone"></i> 038-762-206
+                </p>
+                <span class="left-arrow"></span>
+            </div>
+        </div>
+        <div class="container right-container">
+            <div class="iBox pink">1<sup>st</sup></div>
+            <div class="text-box">
+                <h2>花蓮煙波飯店</h2>
+                <small>19:30 -</small>
+                <p>
+                    <i class="fas fa-map-marker-alt"></i> <a href="https://goo.gl/maps/vEz8J7hEC7CpVcva7" target="_blank">花蓮縣花蓮市中美路 142 號</a><br>
+                    <i class="fas fa-phone"></i> 038-222-666 
+                </p>
+                <span class="right-arrow"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="timeline">
+        <div class="container left-container">
+            <div class="iBox pink">2<sup>nd</sup></div>
+            <div class="text-box">
+                <h2>Check Out</h2>
+                <small>10:00 AM</small>
+                <!-- <p>
+                    <span style="color:#5044fa">「無痕海洋 2023」清水斷崖獨木舟</span><br>
+                    <i class="fas fa-map-marker-alt"></i> 花蓮縣秀林鄉海濱路 98-1 號<br>
+                    <i class="fas fa-phone"></i> 0968-688-791
+                </p> -->
+                <span class="left-arrow"></span>
+            </div>
+        </div>
+        <div class="container right-container">
+            <div class="iBox pink">2<sup>nd</sup></div>
+            <div class="text-box">
+                <h2>花蓮鐵道文化園區</h2>
+                <small>07:30 - 11:00 AM</small>
+                <p>
+                    <i class="fas fa-map-marker-alt"></i> <a href="https://goo.gl/maps/2KxLkwcyKaUtuegr9" target="_blank">花蓮縣花蓮市中山路 71 號</a> <br>
+                    <i class="fas fa-phone"></i> 038-227-121
+                </p>
+                <span class="right-arrow"></span>
+            </div>
+        </div>
+        <div class="container left-container">
+            <div class="iBox pink">2<sup>nd</sup></div>
+            <div class="text-box">
+                <h2>森山舍午餐</h2>
+                <small>11:30 - 12:30 PM</small>
+                <p>
+                    <i class="fas fa-map-marker-alt"></i> <a href="https://goo.gl/maps/SCsySWmickBMwwgQA" target="_blank">花蓮縣花蓮市林政街 10 號</a><br>
+                    <i class="fas fa-phone"></i> 038-351-987<br>
+                    <i class="far fa-hand-paper"></i> Goodbye to 琬嵐、菁菁
+                </p>
+                <span class="left-arrow"></span>
+            </div>
+        </div>
+        <div class="container right-container">
+            <div class="iBox pink">2<sup>nd</sup></div>
+            <div class="text-box">
+                <h2>地耕味蕃樂園採購名產</h2>
+                <small>13:00 - 13:30 PM</small>
+                <p>
+                    <i class="fas fa-map-marker-alt"></i> <a href="https://goo.gl/maps/5LjjhUU1L1n7Zdbs7" target="_blank">花蓮縣新城鄉 17-2 號</a><br>
+                    <i class="fas fa-phone"></i> 038-260-707
+                </p>
+                <span class="right-arrow"></span>
+            </div>
+        </div>
+        <div class="container left-container">
+            <div class="iBox pink">2<sup>nd</sup></div>
+            <div class="text-box">
+                <h2>北后寺</h2>
+                <small>16:00 - 16:30 PM</small>
+                <p>
+                    <i class="fas fa-map-marker-alt"></i> <a href="https://goo.gl/maps/zJRYhxTBndKAyBYU9" target="_blank">宜蘭縣員山鄉八甲路 4 號</a><br>
+                    <i class="fas fa-phone"></i> 039-230-863<br>
+                </p>
+                <span class="left-arrow"></span>
+            </div>
+        </div>
+        
+        <div class="container right-container">
+            <div class="iBox pink">2<sup>nd</sup></div>
+            <div class="text-box">
+                <h2>富美海鮮火鍋</h2>
+                <small>17:30 PM</small>
+                <p>
+                    <i class="fas fa-map-marker-alt"></i> <a href="https://goo.gl/maps/ziDYXwbYax69owLT6" target="_blank">宜蘭縣宜蘭市宜興路一段 48 號</a>
+                </p>
+                <span class="right-arrow"></span>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> -->
+
+</body> 
+</html>
