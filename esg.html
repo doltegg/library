@@ -1,0 +1,342 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>企業社會責任</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+        /* @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@200;300;400;500;600;700;800;900&display=swap'); */
+        /* @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap'); */
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Noto Sans TC', '微軟正黑體', sans-serif;
+            transition: .2s linear;
+        }
+        html{
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            scroll-padding-top: 8rem;
+        }
+        body{
+            background: #f0f2f5;
+        }
+        .header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background-color: #fff;
+            box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+            z-index: 1000;
+        }
+        header{
+            position: relative;
+            padding: 0 10%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header .logo{
+            max-width: 150px;
+        }
+        header ul{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            list-style: none;
+            /* margin-right: 12px; */
+        }
+        header ul li a{
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 1.7rem;
+            color: #333;
+        }
+        header ul li a:hover{
+            background: rgb(1,94,172);
+            color: #fff;
+            padding: 4px 10px 2px;
+            border-radius: 6px;
+        }
+        #menu-btn{
+            display: none;
+        }
+        .banner{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        section{
+            /* padding: 30px 20%;
+            background: #fff; */
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        section .conBox{
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #aaa;
+        }
+        section .conBox h2{
+            color: #015eac;
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        section .conBox  p{
+            line-height: 3rem;
+            font-size: 1.75rem;
+            font-weight: 400;
+            margin-bottom: 1.25rem;
+            color: #2f2f2f;
+        }
+        section .conBox h3{
+            color: #0386f1;
+            font-size: 2.1rem;
+            margin: 1.25rem;
+            margin-top: 2.25rem;
+        }
+        section .conBox:last-child{
+            border-bottom: none;
+        }
+        section .conBox a{
+            display: inline-block;
+            background: #015eac;
+            padding: 8px 16px;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 1.85rem;
+            text-decoration: none;
+            margin-top: 2.25rem;
+        }
+        .pix .row{
+            display: flex;
+            align-items: center;
+            /* gap: 1.5rem; */
+            flex-wrap: wrap;
+        }
+        .pix .row:nth-child(2n){
+            flex-direction: row-reverse;
+        }
+        .pix .row .image{
+            flex: 1 1 40rem;            
+        }
+        .pix .row .image img{
+            width: 100%;
+        }
+        .pix .row .content{
+            flex: 1 1 40rem;
+            text-align: center;
+        }
+        .pix .row .content h3{
+            font-size: 3rem;
+            color: var(--white);            
+        }
+        .pix .row .content p{
+            padding: 1rem 2.25rem;
+            line-height: 2;
+            font-size: 1.75rem;
+            color: var(--light-white);
+        }   
+
+
+
+
+
+        @media (max-width: 991px){
+            html{
+                font-size: 55%;
+            }
+            header{
+                padding: 0 7%;
+            }
+            .section{
+                padding: 65px 7% 30px 7%;
+            } 
+        }
+        @media (max-width: 768px){
+            #menu-btn{
+                display: inline-block;
+                padding-right: 2.2rem;
+            }
+            .fas{
+                font-size: 2.2rem;
+            }
+            .navigation{
+                position: absolute;
+                top: 42px;
+                left: 0;
+                right: 0;
+                background-color:#fff;
+                border-top: .1rem solid #666;
+                border-bottom: .1rem solid #666;
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            }
+            .navigation.active{
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+            .navigation{
+                display: block;
+                margin: 2rem;
+                display: flex;
+                flex-direction: column;
+                padding: 2rem;
+                font-size: 1.7rem;
+            }
+            header{
+                padding: 0 4%;
+            }
+            section{
+                padding: 65px 4% 30px 4%;
+            }
+        }
+        @media (max-width: 600px){
+            html{
+                font-size: 50%;
+            }
+            header{
+                padding: 0 2%;
+            }
+            section{
+                
+                padding: 65px 2% 30px 2%;
+            }
+        }
+
+
+
+ 
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <header>
+            <a href="#"><img src="imgs/logo.png" class="logo"></a>
+            <ul class="navigation">
+                <li><a href="#">網路投保</a></li>
+                <li><a href="#">保戶服務</a></li>
+                <li><a href="#">投資理財</a></li>
+                <li><a href="#">商品資訊</a></li>
+                <li><a href="#">關於宏泰</a></li>
+                <li><a href="#">聯絡我們</a></li>
+            </ul>
+            <div id="menu-btn" class="fas fa-bars"></div>
+        </header>        
+    </div>
+
+    <div class="banner">
+        <img src="imgs/esg/banner.jpg">
+    </div>
+
+    <section>   
+        <div class="conBox"> 
+            <h2>企業社會責任</h2>
+            <p>宏泰人壽不僅提供專業保險理財服務，更積極實踐企業社會責任，長期投注偏鄉教育資源，參與環境保護，同時也組成「宏泰i公益」志工團，積極參與公益活動，關懷銀髮長者，為台灣注入更多正面能量。</p>
+            <p>自2010年起，宏泰人壽與台東基督教醫院一粒麥子基金會共同合作，開設花東地區課輔專班及規劃多元課程。此外更贊助花蓮信望愛少年學園，展開獨輪車之旅，期待能進而改變下一代完善生活環境，增加未來競爭力。</p>
+            <p>同時，更將愛心化為實際行動力，「宏泰i公益」志工團號召同仁一起用愛回饋社會，挽袖捐血展現熱情、參與守護生態保育活動，攜手淨灘維護台灣海岸線，更響應種樹苗行動，為在地環境打造生生不息的自然樣貌。此外也探訪獨居長者，透過陪伴、傾聽，溫暖他們的心靈。</p>
+            <p>不僅於此，宏泰人壽也力挺庇護工廠，鼓勵採購愛心商品，並在企業中超額進用身障員工，支持身心障礙朋友自力發展。同時也開辦微型保單，提供弱勢族群最即時和最需要的幫助。</p>
+            <p>宏泰人壽期望藉由企業的力量，喚起更多關注，幫助更多人，這樣的信念與付出，也獲得了肯定，連續多年獲得「保險信望愛獎」最佳社會責任獎，未來宏泰也將持續守護台灣、守護幸福，成為大眾的最佳保障。</p>
+        </div>
+        <div class="conBox">
+            <h2>TCFD專區</h2>
+            <h3>🍂TCFD專區</h3>
+            <p>隨著逐年嚴重的氣候事件，氣候變遷加劇了自然災害的發生頻率與衝擊程度，伴隨天災而來的還有巨大的經濟損失，氣候變遷因應行動與永續發展已成為全球關注的重要議題。為強化氣候相關風險與機會管理，降低氣候變遷可能造成的衝擊，宏泰人壽自2022年將氣候變遷風險納入本公司「風險管理政策」，並於同年訂定「氣候變遷風險管理政策」等相關規範，將氣候議題更加全面整合至公司整體內部控制及風險管理架構，且將其納入「宏泰人壽風險胃納聲明」，設定公司核心的氣候使命、策略及行動方向。</p>
+            <p>為有效落實氣候相關風險與機會之因應及揭露事項，成立「氣候相關風險財務揭露工作小組」（TCFD工作小組），定期就氣候相關議題與執行情形進行報告，並後續呈報風險控管委員會及董事會，進一步強化公司整體氣候治理。</p>
+            <p>氣候災害對環境及經濟上的負面影響不容忽視，為減緩氣候威脅並響應國家「2050淨零碳排」政策，宏泰人壽將持續透過節能減碳措施與永續行動，致力達成環境永續的目標，並透過報告書揭露，持續關注氣候議題，積極配合國家永續發展相關政策，以提升氣候韌性、達到永續經營之目的，共同打造經濟與環境雙贏未來。</p>
+            <h3>🍂揭露架構</h3>
+            <p>宏泰人壽依循金融監督管理委員會發布之「保險業氣候相關風險財務揭露指引」為核心進行報告書編撰，並參考國際金融穩定委員會（FSB）氣候相關財務揭露（TCFD）工作小組建議揭露之四大面向：治理、策略、風險管理及指標目標，於報告書中進行公開揭露。</p>
+            <a href="#">🍂報告書下載</a>
+        </div>    
+    </section>
+
+    <section class="pix">
+        <div class="row">
+            <div class="image">
+                <img src="imgs/esg/00.jpg">
+            </div>
+            <div class="content">
+                <h3>why choose 1?</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, id expedita cumque recusandae perspiciatis possimus eligendi eveniet nisi tempora asperiores.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="image">
+                <img src="imgs/esg/01.jpg">
+            </div>
+            <div class="content">
+                <h3>why choose 2?</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, id expedita cumque recusandae perspiciatis possimus eligendi eveniet nisi tempora asperiores.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="image">
+                <img src="imgs/esg/02.jpg">
+            </div>
+            <div class="content">
+                <h3>why choose 3?</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, id expedita cumque recusandae perspiciatis possimus eligendi eveniet nisi tempora asperiores.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="image">
+                <img src="imgs/esg/03.jpg">
+            </div>
+            <div class="content">
+                <h3>why choose 4?</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, id expedita cumque recusandae perspiciatis possimus eligendi eveniet nisi tempora asperiores.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="image">
+                <img src="imgs/esg/04.jpg">
+            </div>
+            <div class="content">
+                <h3>why choose 5?</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, id expedita cumque recusandae perspiciatis possimus eligendi eveniet nisi tempora asperiores.</p>
+            </div>
+        </div>        
+        <div class="row">
+            <div class="image">
+                <img src="imgs/esg/05.jpg">
+            </div>
+            <div class="content">
+                <h3>why choose 6?</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, id expedita cumque recusandae perspiciatis possimus eligendi eveniet nisi tempora asperiores.</p>
+            </div>
+        </div>        
+        <div class="row">
+            <div class="image">
+                <img src="imgs/esg/06.jpg">
+            </div>
+            <div class="content">
+                <h3>why choose 7?</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet. Minima, id expedita cumque recusandae perspiciatis possimus eligendi eveniet nisi tempora asperiores.</p>
+            </div>
+        </div>
+
+    </section>
+
+    
+ 
+
+
+    
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body> 
+</html>
