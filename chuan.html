@@ -25,11 +25,13 @@
         justify-content: center;
         align-items: center;
         min-height: 100vh;
-        background: #2f363e;
+        background: #2f363e;        
     }
     #time{
         display: flex;
+        justify-content: center;
         gap: 30px;
+        flex-wrap: wrap;
     }
     #time .circle{
         position: relative;
@@ -262,7 +264,7 @@
             minutes.innerHTML = m + "<br><span>Minutes</span>";
             seconds.innerHTML = s + "<br><span>Seconds</span>";
 
-            dd.style.strokeDashoffset = 440 - (440 * d) / 365;
+            dd.style.strokeDashoffset = 440 - (440 * d) / 4;
             hh.style.strokeDashoffset = 440 - (440 * h) / 24;
             mm.style.strokeDashoffset = 440 - (440 * m) / 60;
             ss.style.strokeDashoffset = 440 - (440 * s) / 60;
