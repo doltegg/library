@@ -98,10 +98,7 @@
     .content{
         display: none;
         position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
+        gap: 1rem; 
     }    
     .content .pic{
         position: relative;
@@ -118,9 +115,16 @@
     .content .wish h2{
         font-size: 2rem;
         color: yellow;
-        text-transform: capitalize;
-        margin-bottom: 1.6rem;
-        text-align: center;
+        text-transform: capitalize;        
+    }
+    .content .wish .female{
+        color: rgba(252, 252, 168, 0.6);
+        font-size: 1.45rem;
+        margin-bottom: 1rem;
+    }
+    .content .wish .female .happy{
+        font-weight: 700;
+        color: rgb(253, 253, 168);
     }
     .content .wish h4{
         color: #fff;
@@ -135,7 +139,7 @@
     }
     .content .wish .sgn{
         text-align: right;
-        color: #666;  
+        color: #cdcdcd;  
         font-size: 1rem;      
     }
     .content .wish .sgn .type{
@@ -153,8 +157,12 @@
         font-weight: 600;
         border: none;
         color: #292929;
-        box-shadow: 3px 3px 2px rgba(247, 247, 8, 0.1);
-        margin-bottom: 1.75rem;
+        box-shadow: 3px 3px 2px rgba(247, 247, 8, 0.1);  
+        margin-bottom: .25rem;      
+    }
+    .content .wish .eye{
+        color: #aaa;
+        margin-bottom: 1.25rem;
     }
     .content .wish a button:hover{
         background: #fff;
@@ -204,19 +212,19 @@
     <div class="content">
         <div class="pic"></div>
         <div class="wish">
-            <h2>An eye for an eye, <br>a tooth for a tooth</h2>
+            <h2>Congratulations!</h2>
+            <div class="female"><span class=happy>Happy Birthday</span> 50 years <span class="happy">old</span> female.</div>
             <h4>chuan:</h4>
             <p>
-                生日快樂<br>
-                祝福你<br>
-                順心如意<br>
-                真聰明！
-            </p>
-            <p>
-                你不喝牛奶，所以我選擇豆奶。但不是給你喝的，只准看，沒法喝！
+                生日快樂！<br>
+                祝福你順心如意，真聰明！
             </p>
             <a href="https://doltegg.github.io/blog/birthday2021.html"><button>始作俑者</button></a>
-            <p class="sgn"><span class="type">egggggggg...</span><br> Oct. 8, 2023</p>
+            <div class="eye">
+                An eye for an eye, a tooth for a tooth.<br>
+                你不喝牛奶，所以我選擇豆奶。但不是給你喝的，只准看，沒法喝！
+            </div>            
+            <div class="sgn"><span class="type">egggggggg...</span><br> Oct. 8, 2023</div>
         </div>
     </div>
 
